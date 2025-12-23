@@ -1,4 +1,4 @@
-# Jack's Agent Skills Marketplace
+# Jack's Agent Plugins Marketplace
 
 A curated collection of Claude Code agent skills for software engineering, including Python development standards, testing practices, and architectural patterns.
 
@@ -22,7 +22,7 @@ claude --plugin-dir /path/to/plugin-marketplace
 
 # Or install from GitHub
 /plugin marketplace add johncburns1/plugin-marketplace
-/plugin install jc-agent-skills@plugin-marketplace
+/plugin install jacks-agent-skills@plugin-marketplace
 ```
 
 ### Manual Installation
@@ -53,7 +53,7 @@ To add a new skill:
 
 ## Plugin Metadata
 
-- **Name**: `jc-agent-skills`
+- **Name**: `jacks-agent-plugins`
 - **Version**: `1.0.0`
 - **Author**: John C Burns
 - **License**: MIT
