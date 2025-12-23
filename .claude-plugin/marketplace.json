@@ -1,14 +1,29 @@
 {
-  "name": "jacks-agent-skills",
-  "description": "A curated collection of agent skills for software engineering, including Python development standards, testing practices, and architectural patterns",
-  "version": "1.0.0",
-  "author": {
+  "name": "jacks-agent-plugins",
+  "owner": {
     "name": "John C Burns",
     "email": "johncburns1@gmail.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/johncburns1/plugin-marketplace"
+  "metadata": {
+    "description": "Marketplace for agent plugins including skills, commands, and tools for software engineering and product development",
+    "version": "1.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/johncburns1/plugin-marketplace"
+    },
+    "license": "MIT"
   },
-  "license": "MIT"
+  "plugins": [
+    {
+      "name": "engineering-skills",
+      "description": "Collection of software engineering skills including Python standards, testing practices, hexagonal architecture, and product definition methodology",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/engineering-standards",
+        "./skills/python-engineering",
+        "./skills/product-definition-guide"
+      ]
+    }
+  ]
 }

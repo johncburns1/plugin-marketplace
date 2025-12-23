@@ -1,12 +1,18 @@
 # Jack's Agent Plugins Marketplace
 
-A curated collection of Claude Code agent skills for software engineering, including Python development standards, testing practices, and architectural patterns.
+A marketplace for Claude Code agent plugins including skills, commands, and tools for software engineering and product development.
 
 ## What are Agent Skills?
 
 Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources that Claude uses automatically when relevant.
 
-## Available Skills
+## Available Plugins
+
+### Engineering Skills
+
+A collection of software engineering agent skills for Python development, testing, architecture, and product definition.
+
+**Skills included**:
 
 - **[Engineering Standards](./skills/engineering-standards/README.md)** - Core engineering principles including simplicity-first philosophy, TDD, and hexagonal architecture
 - **[Python Engineering](./skills/python-engineering/README.md)** - Python-specific tooling and practices for Python 3.13+ projects (uv, ruff, mypy, pytest)
@@ -17,12 +23,14 @@ Agent Skills are modular capabilities that extend Claude's functionality. Each S
 ### Using Claude Code
 
 ```bash
-# Load plugin from local directory
-claude --plugin-dir /path/to/plugin-marketplace
-
-# Or install from GitHub
+# Add the marketplace
 /plugin marketplace add johncburns1/plugin-marketplace
-/plugin install jacks-agent-skills@plugin-marketplace
+
+# Install the engineering skills plugin
+/plugin install engineering-skills@jacks-agent-plugins
+
+# Or install from local directory
+claude --plugin-dir /path/to/plugin-marketplace
 ```
 
 ### Manual Installation
@@ -44,19 +52,31 @@ Once installed, Claude will automatically use these skills when relevant. No man
 
 ## Contributing
 
-To add a new skill:
+### Adding a New Skill to Existing Plugin
 
 1. Create a new directory in `skills/` with a `SKILL.md` file
 2. Add a `README.md` with metadata and high-level description
-3. Update this README to include the new skill
-4. Increment the version in `.claude-plugin/plugin.json`
+3. Add the skill path to the plugin's `skills` array in `marketplace.json`
+4. Update this README to list the new skill
+5. Increment the version in `.claude-plugin/marketplace.json`
 
-## Plugin Metadata
+### Adding a New Plugin to Marketplace
+
+1. Create the plugin structure (commands, skills, agents, etc.)
+2. Add a new plugin entry to the `plugins` array in `marketplace.json`
+3. Update this README to describe the new plugin
+4. Increment the version in `.claude-plugin/marketplace.json`
+
+## Marketplace Metadata
 
 - **Name**: `jacks-agent-plugins`
 - **Version**: `1.0.0`
-- **Author**: John C Burns
+- **Owner**: John C Burns
 - **License**: MIT
+
+### Current Plugins
+
+1. **engineering-skills** - Software engineering agent skills (3 skills)
 
 ## Resources
 
