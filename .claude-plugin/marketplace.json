@@ -1,0 +1,14 @@
+{
+  "name": "jc-agent-skills",
+  "description": "A curated collection of agent skills for software engineering, including Python development standards, testing practices, and architectural patterns",
+  "version": "1.0.0",
+  "author": {
+    "name": "John C Burns",
+    "email": "johncburns1@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johncburns1/plugin-marketplace"
+  },
+  "license": "MIT"
+}
