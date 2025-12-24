@@ -18,6 +18,15 @@ A collection of software engineering agent skills for Python development, testin
 - **[Python Engineering](./skills/python-engineering/README.md)** - Python-specific tooling and practices for Python 3.13+ projects (uv, ruff, mypy, pytest)
 - **[Product Definition Guide](./skills/product-definition-guide/README.md)** - Conversational methodology for creating comprehensive product specs and PRDs
 
+### Full-Stack Skills
+
+Modern full-stack development skills for building responsive web applications with React frontend and serverless backend architecture.
+
+**Skills included**:
+
+- **[Frontend Development](./skills/frontend-development/README.md)** - React + Vite web development with TypeScript, responsive design, hooks + Context patterns
+- **[Backend Development](./skills/backend-development/README.md)** - Serverless architecture, API design, authentication/authorization, database design (language-agnostic)
+
 ## Installation
 
 ### Using Claude Code
@@ -28,6 +37,9 @@ A collection of software engineering agent skills for Python development, testin
 
 # Install the engineering skills plugin
 /plugin install engineering-skills@jacks-agent-plugins
+
+# Install the full-stack skills plugin
+/plugin install full-stack-skills@jacks-agent-plugins
 
 # Or install from local directory
 claude --plugin-dir /path/to/plugin-marketplace
@@ -77,6 +89,7 @@ Once installed, Claude will automatically use these skills when relevant. No man
 ### Current Plugins
 
 1. **engineering-skills** - Software engineering agent skills (3 skills)
+2. **full-stack-skills** - Full-stack development skills (2 skills)
 
 ## Resources
 

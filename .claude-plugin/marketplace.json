@@ -24,6 +24,16 @@
         "./skills/python-engineering",
         "./skills/product-definition-guide"
       ]
+    },
+    {
+      "name": "full-stack-skills",
+      "description": "Full-stack development skills for building modern web applications with React frontend and serverless backend architecture",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/frontend-development",
+        "./skills/backend-development"
+      ]
     }
   ]
 }
