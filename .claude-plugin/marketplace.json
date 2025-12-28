@@ -15,16 +15,6 @@
   },
   "plugins": [
     {
-      "name": "engineering-skills",
-      "description": "Collection of software engineering skills including Python standards, testing practices, and hexagonal architecture patterns",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/engineering-standards",
-        "./skills/python-engineering"
-      ]
-    },
-    {
       "name": "project-planning",
       "description": "Project planning and management skills for defining products, designing system architecture, creating GitHub issues, and organizing engineering work into milestones",
       "source": "./",
@@ -36,11 +26,13 @@
       ]
     },
     {
-      "name": "full-stack-skills",
-      "description": "Full-stack development skills for building modern web applications with React frontend and serverless backend architecture",
+      "name": "engineering-skills",
+      "description": "Full-stack software engineering skills including core principles, Python standards, React frontend, and serverless backend development",
       "source": "./",
       "strict": false,
       "skills": [
+        "./skills/engineering-standards",
+        "./skills/python-engineering",
         "./skills/frontend-development",
         "./skills/backend-development"
       ]

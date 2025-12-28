@@ -8,15 +8,6 @@ Agent Skills are modular capabilities that extend Claude's functionality. Each S
 
 ## Available Plugins
 
-### Engineering Skills
-
-A collection of software engineering agent skills for Python development, testing, and architecture.
-
-**Skills included**:
-
-- **[Engineering Standards](./skills/engineering-standards/README.md)** - Core engineering principles including simplicity-first philosophy, TDD, and hexagonal architecture
-- **[Python Engineering](./skills/python-engineering/README.md)** - Python-specific tooling and practices for Python 3.13+ projects (uv, ruff, mypy, pytest)
-
 ### Project Planning
 
 Project planning and management skills for defining products, designing system architecture, creating GitHub issues, and organizing engineering work.
@@ -27,12 +18,14 @@ Project planning and management skills for defining products, designing system a
 - **[Architecture Guide](./skills/architecture-guide/README.md)** - Enterprise architect perspective for creating one-page, technology-agnostic system architecture docs
 - **[Technical Project Manager](./skills/technical-project-manager/README.md)** - Principal-level PM skill for creating GitHub issues and milestones from product requirements
 
-### Full-Stack Skills
+### Engineering Skills
 
-Modern full-stack development skills for building responsive web applications with React frontend and serverless backend architecture.
+Full-stack software engineering skills including core principles, Python standards, React frontend, and serverless backend development.
 
 **Skills included**:
 
+- **[Engineering Standards](./skills/engineering-standards/README.md)** - Core engineering principles including simplicity-first philosophy, TDD, and hexagonal architecture
+- **[Python Engineering](./skills/python-engineering/README.md)** - Python-specific tooling and practices for Python 3.13+ projects (uv, ruff, mypy, pytest)
 - **[Frontend Development](./skills/frontend-development/README.md)** - React + Vite web development with TypeScript, responsive design, hooks + Context patterns
 - **[Backend Development](./skills/backend-development/README.md)** - Serverless architecture, API design, authentication/authorization, database design (language-agnostic)
 
@@ -44,14 +37,11 @@ Modern full-stack development skills for building responsive web applications wi
 # Add the marketplace
 /plugin marketplace add johncburns1/plugin-marketplace
 
-# Install the engineering skills plugin
-/plugin install engineering-skills@jacks-agent-plugins
-
 # Install the project planning plugin
 /plugin install project-planning@jacks-agent-plugins
 
-# Install the full-stack skills plugin
-/plugin install full-stack-skills@jacks-agent-plugins
+# Install the engineering skills plugin
+/plugin install engineering-skills@jacks-agent-plugins
 
 # Or install from local directory
 claude --plugin-dir /path/to/plugin-marketplace
@@ -100,9 +90,8 @@ Once installed, Claude will automatically use these skills when relevant. No man
 
 ### Current Plugins
 
-1. **engineering-skills** - Software engineering agent skills (2 skills)
-2. **project-planning** - Project planning and management skills (3 skills)
-3. **full-stack-skills** - Full-stack development skills (2 skills)
+1. **project-planning** - Project planning and management skills (3 skills)
+2. **engineering-skills** - Full-stack software engineering skills (4 skills)
 
 ## Resources
 
