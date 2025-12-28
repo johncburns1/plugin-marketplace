@@ -7,6 +7,17 @@ description: Python-specific tooling and practices including uv, ruff, mypy, pyt
 
 Modern Python development practices and tooling conventions for Python 3.13+ projects.
 
+## When to Activate
+
+Activate this skill when the user:
+
+- Is setting up a new Python project
+- Needs to configure uv, ruff, mypy, or pytest
+- Is writing Python tests or adding type annotations
+- Needs guidance on Python project structure
+- Is configuring pre-commit hooks for Python
+- Asks about modern Python tooling or best practices
+
 ## Core Toolchain
 
 ### 1. Package Management: uv
@@ -156,6 +167,10 @@ def calculate_total(items: list[Item], tax_rate: float = 0.0) -> Decimal:
 ```
 
 **Note**: Don't repeat type information that's already in type hints.
+
+## Related Skills
+
+- [engineering-standards](../engineering-standards/SKILL.md) - Foundational principles (simplicity, TDD, architecture)
 
 ## Further Reading
 

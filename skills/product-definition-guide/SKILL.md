@@ -7,7 +7,7 @@ description: Conversational methodology for creating comprehensive product defin
 
 A conversational framework for creating comprehensive product definition documents that capture vision, requirements, constraints, and success criteria.
 
-## When to Use This Skill
+## When to Activate
 
 Activate this skill when the user:
 
@@ -147,6 +147,13 @@ The document should be comprehensive enough that anyone reading it understands:
 - What's in scope and what's not
 - How success will be measured
 - What questions remain to be answered
+
+## Related Skills
+
+After creating PRODUCT.md, the typical workflow continues with:
+
+- [architecture-guide](../architecture-guide/SKILL.md) - Design system architecture based on product requirements
+- [technical-project-manager](../technical-project-manager/SKILL.md) - Create GitHub issues from requirements
 
 ## Further Reading
 

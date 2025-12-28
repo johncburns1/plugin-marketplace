@@ -7,6 +7,49 @@ description: Core engineering principles including simplicity-first philosophy, 
 
 Core engineering principles and patterns for building maintainable, testable software.
 
+## Skill Hierarchy
+
+These skills work together in a typical product/engineering workflow:
+
+```text
+┌─────────────────────────────────────────────────────────────────┐
+│                     PLANNING PHASE                              │
+├─────────────────────────────────────────────────────────────────┤
+│  product-definition-guide  →  architecture-guide                │
+│       (PRODUCT.md)              (ARCHITECTURE.md)               │
+│              ↓                        ↓                         │
+│              └────────┬───────────────┘                         │
+│                       ↓                                         │
+│            technical-project-manager                            │
+│                (GitHub Issues)                                  │
+├─────────────────────────────────────────────────────────────────┤
+│                   IMPLEMENTATION PHASE                          │
+├─────────────────────────────────────────────────────────────────┤
+│                  engineering-standards                          │
+│              (foundational principles)                          │
+│                       ↓                                         │
+│    ┌──────────────────┼──────────────────┐                      │
+│    ↓                  ↓                  ↓                      │
+│ frontend-       backend-           python-                      │
+│ development     development        engineering                  │
+│  (React)       (Serverless)        (Tooling)                    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Planning Phase**: Define what to build, then how to build it, then break into tasks.
+**Implementation Phase**: Apply foundational principles through domain-specific skills.
+
+## When to Activate
+
+Activate this skill when the user:
+
+- Is designing new features or system components
+- Is refactoring existing code
+- Needs guidance on architectural decisions
+- Is reviewing code structure or patterns
+- Needs to plan a testing strategy
+- Asks about TDD, hexagonal architecture, or SOLID principles
+
 ## Core Principles
 
 ### 1. Simplicity First
@@ -141,6 +184,31 @@ When reviewing code:
 **DRY**: Extract common logic, but wait for third repetition
 **KISS**: Simplest solution wins
 **YAGNI**: Build only what's needed now
+
+## Engineering Mindset
+
+Universal principles that apply across all domains (frontend, backend, infrastructure):
+
+1. **Simple beats clever** - Maintainable over impressive
+2. **Optimize when measured** - Profile before optimizing; don't guess at bottlenecks
+3. **Write for the next developer** - Code is read 10x more than written
+4. **Delete code aggressively** - Dead code is technical debt
+5. **Type safety prevents bugs** - Catch errors at compile time, not runtime
+6. **Test what matters** - Critical paths and edge cases, not 100% coverage
+7. **Dependencies are liabilities** - Each package is a future security/maintenance burden
+8. **Design for failure** - Handle errors gracefully; assume things will break
+9. **Leverage platforms** - Don't build what you can buy or use from proven tools
+10. **Build, measure, learn** - Ship fast, iterate based on real usage
+
+These principles are foundational. Domain-specific skills (frontend-development, backend-development) extend these with specialized guidance.
+
+## Related Skills
+
+This skill provides foundational principles used by:
+
+- [frontend-development](../frontend-development/SKILL.md) - React/Vite web development
+- [backend-development](../backend-development/SKILL.md) - Serverless API architecture
+- [python-engineering](../python-engineering/SKILL.md) - Python-specific tooling
 
 ## Further Reading
 

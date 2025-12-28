@@ -7,6 +7,18 @@ description: Senior-level React web development standards. Use when building web
 
 Senior-level architectural guidance for building responsive web applications with React and Vite.
 
+## When to Activate
+
+Activate this skill when the user:
+
+- Is building web applications with React
+- Needs guidance on component architecture or design patterns
+- Is implementing state management strategies
+- Is designing responsive or mobile-first layouts
+- Is setting up a new React + Vite project
+- Needs guidance on TypeScript patterns for React
+- Is reviewing or refactoring frontend code
+
 ## Core Philosophy
 
 **Simplicity over cleverness**. Write code that's easy to understand, maintain, and delete. Avoid premature optimization and over-engineering. Boring, obvious code wins.
@@ -21,7 +33,7 @@ Senior-level architectural guidance for building responsive web applications wit
 
 ## Project Structure
 
-```
+```text
 src/
 ├── components/
 │   ├── ui/              # Generic reusable components (Button, Input, Card)
@@ -35,7 +47,8 @@ src/
 ```
 
 ### Alternative: Feature-Based (for larger apps)
-```
+
+```text
 src/
 ├── features/
 │   ├── auth/
@@ -90,12 +103,14 @@ Extract logic from components into reusable hooks:
 ### Context Usage Guidelines
 
 **When to use Context:**
+
 - Authentication state and methods
 - Theme/dark mode
 - User preferences
 - Feature flags
 
 **Best practices:**
+
 - Split contexts by concern (don't create one giant context)
 - Always provide custom hook: `useAuth()`, `useTheme()`
 - Throw error if used outside provider
@@ -104,6 +119,7 @@ Extract logic from components into reusable hooks:
 ## Anti-Patterns to Avoid
 
 ### Component Anti-Patterns
+
 - ❌ **Prop drilling** - Passing props through 3+ levels
 - ❌ **Massive components** - 500+ line components
 - ❌ **Default exports** - Harder to refactor
@@ -112,6 +128,7 @@ Extract logic from components into reusable hooks:
 - ❌ **Mixing UI and logic** - Separate concerns
 
 ### State Anti-Patterns
+
 - ❌ **Mutating state directly** - Always create new objects/arrays
 - ❌ **useEffect for derived state** - Calculate directly instead
 - ❌ **Too many useEffects** - Indicates poor design
@@ -119,6 +136,7 @@ Extract logic from components into reusable hooks:
 - ❌ **Premature state libraries** - Try Context first
 
 ### TypeScript Anti-Patterns
+
 - ❌ **Using `any`** - Defeats purpose of TypeScript
 - ❌ **Inline type definitions** - Extract to interfaces
 - ❌ **Not typing API responses** - Always type external data
@@ -136,6 +154,7 @@ Extract logic from components into reusable hooks:
 ## Responsive Design (Mobile-First)
 
 ### Core Principles
+
 1. **Mobile-first CSS** - Start with mobile, add breakpoints for larger screens
 2. **Fluid layouts** - Use percentages, `fr`, `min/max` instead of fixed widths
 3. **Responsive typography** - `clamp()`, `rem` units
@@ -143,6 +162,7 @@ Extract logic from components into reusable hooks:
 5. **Test on real devices** - Not just browser resize
 
 ### Breakpoint Strategy
+
 ```css
 /* Mobile first - no media query needed */
 .container { width: 100%; }
@@ -174,6 +194,7 @@ Extract logic from components into reusable hooks:
 - **Playwright** or **Cypress** for E2E tests
 
 ### Testing Principles
+
 - Test user behavior, not implementation
 - Test critical paths: auth, data rendering, forms
 - Mock API calls consistently
@@ -183,18 +204,21 @@ Extract logic from components into reusable hooks:
 ## API Integration
 
 ### Client Abstraction Pattern
+
 - Create API client in `lib/api.ts`
 - All API calls go through client
 - Custom hooks consume API client
 - Components never call API directly
 
 ### Data Fetching Architecture
+
 - Custom hooks for each resource
 - Handle loading, error, and empty states
 - Return refetch function for manual updates
 - Consider caching strategy (simple Map, or library if needed)
 
 ### Error Handling Strategy
+
 - Error boundaries at route level for graceful failures
 - User-facing error messages via toast/notification
 - Log errors to monitoring service
@@ -212,18 +236,21 @@ Extract logic from components into reusable hooks:
 ## Security Best Practices
 
 ### Authentication & Authorization
+
 - Never store sensitive tokens in localStorage (use httpOnly cookies)
 - Implement proper CSRF protection
 - Validate on backend, not just frontend
 - Use secure authentication flow
 
 ### Input Validation
+
 - Sanitize user input before rendering
 - Prevent XSS with proper escaping
 - Validate on both client and server
 - Use Content Security Policy headers
 
 ### Environment Variables
+
 - Prefix public vars: `VITE_*`
 - Access via `import.meta.env.VITE_API_URL`
 - Never commit `.env.local` or secrets
@@ -232,6 +259,7 @@ Extract logic from components into reusable hooks:
 ## Development Workflow
 
 ### Initial Setup
+
 ```bash
 npm create vite@latest my-app -- --template react-ts
 cd my-app
@@ -240,6 +268,7 @@ npm run dev
 ```
 
 ### Common Commands
+
 ```bash
 npm run dev          # Start dev server
 npm run build        # Production build
@@ -249,6 +278,7 @@ npm run test         # Run tests (configure Vitest)
 ```
 
 ### Code Quality Tools
+
 - **ESLint** - Lint JavaScript/TypeScript
 - **Prettier** - Format code consistently
 - **Husky** - Git hooks for pre-commit checks
@@ -265,17 +295,18 @@ npm run test         # Run tests (configure Vitest)
 - **Styling**: CSS Modules, Tailwind, or styled-components (pick one)
 - **Date handling**: date-fns (lighter than moment.js)
 
-## Senior-Level Mindset
+## Related Skills
 
-1. **Write for the next developer** - Code is read 10x more than written
-2. **Delete code aggressively** - Dead code is technical debt
-3. **Simple beats clever** - Maintainable over impressive
-4. **Accessibility from start** - Not a feature, it's a requirement
-5. **Mobile-first always** - Most users are on mobile
-6. **Progressive enhancement** - Core functionality works without JS
-7. **Error states matter** - Loading, error, empty states are UX
-8. **Type safety prevents bugs** - Invest in TypeScript
-9. **Test what matters** - Critical paths, not 100% coverage
-10. **Optimize when measured** - Profile before optimizing
-11. **Dependencies are liabilities** - Each package is a future security/maintenance issue
-12. **Build, measure, learn** - Ship fast, iterate based on real usage
+- [engineering-standards](../engineering-standards/SKILL.md) - Foundational principles (simplicity, TDD, architecture)
+- [backend-development](../backend-development/SKILL.md) - API layer that frontend consumes
+
+## Frontend-Specific Mindset
+
+In addition to the universal principles in [engineering-standards](../engineering-standards/SKILL.md#engineering-mindset):
+
+1. **Accessibility from start** - Not a feature, it's a requirement
+2. **Mobile-first always** - Most users are on mobile
+3. **Progressive enhancement** - Core functionality works without JS
+4. **Error states matter** - Loading, error, empty states are UX
+5. **Component composition** - Build complex UIs from simple, focused pieces
+6. **Semantic HTML first** - Use the right elements before reaching for ARIA

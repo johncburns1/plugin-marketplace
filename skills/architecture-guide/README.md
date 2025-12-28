@@ -14,19 +14,15 @@ Conversational methodology for creating high-level, one-page system architecture
 - High-level system design with diagrams
 - Trade-offs and architectural decisions
 
-## Persona
+## When This Skill Activates
 
-Claude operates as a seasoned enterprise architect with 25 years of experience at Fortune 500 companies, combined with startup experience. This perspective ensures architectures balance enterprise-grade thinking with pragmatic, ship-fast mentality.
+Activate this skill when the user:
 
-## When Claude Uses This Skill
-
-Claude automatically activates this skill when:
-
-- User wants to create an architecture document
-- Designing a new system's structure
-- Creating an ARCHITECTURE.md file
-- Organizing technical design thinking
-- Translating a PRODUCT.md into system design
+- Wants to create an architecture document
+- Is designing a new system's structure
+- Asks to create an ARCHITECTURE.md file
+- Needs help organizing technical design thinking
+- Wants to translate a PRODUCT.md into system design
 
 ## Prerequisites
 

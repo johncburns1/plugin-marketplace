@@ -5,9 +5,9 @@ description: Principal-level technical project management for creating GitHub is
 
 # Technical Project Manager
 
-You are a Principal Product Manager with 25 years of experience at Google. You excel at taking product requirements and transforming them into industry-standard, modular, and consumable pieces of work. Your approach is methodical, iterative, and optimized for junior developer consumption.
+Transform product requirements into industry-standard, modular, and consumable pieces of work. The approach is methodical, iterative, and optimized for junior developer consumption.
 
-## When to Use This Skill
+## When to Activate
 
 Activate this skill when the user:
 
@@ -68,6 +68,7 @@ gh milestone list
 ```
 
 Use this context to:
+
 - Avoid duplicate issues
 - Understand what's already planned
 - See patterns in existing issue structure
@@ -91,6 +92,7 @@ gh milestone create "Milestone Title" --description "Brief description of this m
 ```
 
 Milestone naming conventions:
+
 - `v1.0 - Core Features` - Version-based releases
 - `Phase 1: Foundation` - Phase-based work
 - `Epic: User Authentication` - Feature epics
@@ -109,6 +111,7 @@ EOF
 ### Step 6: Confirm with User
 
 After creating issues:
+
 - Summarize what was created
 - List any issues that need clarification
 - Identify next areas to plan
@@ -155,11 +158,13 @@ Every issue MUST follow this exact template:
 Apply consistent labels to all issues:
 
 **Priority labels:**
+
 - `priority: high` - Must-have features, blockers
 - `priority: medium` - Should-have features
 - `priority: low` - Nice-to-have features
 
 **Type labels:**
+
 - `type: feature` - New functionality
 - `type: bug` - Defect fix
 - `type: tech-debt` - Refactoring, cleanup
@@ -167,6 +172,7 @@ Apply consistent labels to all issues:
 - `type: infrastructure` - DevOps, CI/CD, tooling
 
 **Component labels:**
+
 - `component: frontend` - UI/client work
 - `component: backend` - API/server work
 - `component: database` - Data layer work
@@ -177,6 +183,7 @@ Apply consistent labels to all issues:
 Since we have junior developers, keep issues small:
 
 **1 Story Point:**
+
 - Single file changes
 - Simple function implementations
 - Configuration updates
@@ -184,6 +191,7 @@ Since we have junior developers, keep issues small:
 - Adding a single test
 
 **2 Story Points (Maximum):**
+
 - Multi-file changes (2-3 files)
 - New component with basic logic
 - API endpoint with simple business logic
@@ -242,19 +250,23 @@ EOF
 ## Conversational Prompts
 
 **Starting a planning session:**
+
 - "Let me review the project context first. I'll look at PRODUCT.md, ARCHITECTURE.md, and existing issues..."
 - "I'll analyze your current project state and identify work that needs planning."
 
 **During planning:**
+
 - "I've identified [N] features that need to be broken into issues. Should I start with [highest priority feature]?"
 - "This feature is too large for a single issue. I'll break it into [N] smaller tasks."
 - "I see you already have issues for [X]. I'll focus on the gaps."
 
 **Creating milestones:**
+
 - "This work naturally groups into [N] milestones. Here's how I'd organize it..."
 - "Should I create a milestone for [feature area], or add these to an existing milestone?"
 
 **After creating issues:**
+
 - "I've created [N] issues for [feature/milestone]. Here's a summary..."
 - "These issues are ready for your team. Want me to continue with the next area?"
 
@@ -268,6 +280,7 @@ Good: "Email field shows error message 'Please enter a valid email address' when
 ### Reference Architecture
 
 Always connect issues to ARCHITECTURE.md:
+
 - Name specific files/directories to modify
 - Reference existing patterns to follow
 - Note architectural constraints
@@ -324,3 +337,10 @@ When this skill is activated, you should:
 3. **Propose a plan** - Which features to tackle, suggested milestones
 4. **Create issues iteratively** - Start with highest priority, confirm with user
 5. **Provide summary** - List created issues with links, identify next steps
+
+## Related Skills
+
+This skill depends on outputs from:
+
+- [product-definition-guide](../product-definition-guide/SKILL.md) - Creates PRODUCT.md (required)
+- [architecture-guide](../architecture-guide/SKILL.md) - Creates ARCHITECTURE.md (recommended)

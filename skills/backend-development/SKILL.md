@@ -7,18 +7,31 @@ description: Senior-level backend architecture and API design standards for serv
 
 Senior-level architectural guidance for building secure, scalable serverless backend systems. Language-agnostic principles applicable to any backend language (Python, TypeScript, Go, etc.).
 
+## When to Activate
+
+Activate this skill when the user:
+
+- Is designing backend architecture or API structure
+- Needs guidance on REST API design and conventions
+- Is implementing authentication or authorization
+- Is designing database schemas or migrations
+- Needs security guidance (validation, secrets, rate limiting)
+- Is setting up serverless functions
+- Is integrating LLM services into a backend
+
 ## Core Philosophy
 
 **Secure by default, simple by design**. Always enforce proper API boundaries—frontend never queries database directly. Build systems that are easy to reason about and hard to misuse.
 
-## Recommended Stack
+## Suggested Stack (Opinionated Starter)
 
-For projects without special requirements:
-- **Supabase** - PostgreSQL, auth, storage, serverless functions
-- **Anannas.ai** - LLM gateway (switch providers without code changes)
-- **Serverless Functions** - AWS Lambda, Vercel, Cloudflare Workers, etc.
+For rapid prototyping without special requirements. Evaluate alternatives based on project needs:
 
-**Language choice**: Project-by-project basis.
+- **Supabase** - PostgreSQL, auth, storage, edge functions (good for quick starts)
+- **LLM Gateway** - Use a provider abstraction layer to switch between OpenAI, Anthropic, etc. without code changes
+- **Serverless Functions** - AWS Lambda, Vercel, Cloudflare Workers, Supabase Edge Functions
+
+**Language choice**: Project-by-project basis. These patterns apply to Python, TypeScript, Go, etc.
 
 ## Serverless Architecture
 
@@ -28,6 +41,7 @@ For projects without special requirements:
 **Trade-offs**: Cold starts, platform lock-in, stateless design required
 
 **Why API Layer**:
+
 - Centralized business logic and security enforcement
 - Database refactoring doesn't break frontend
 - API aggregates from multiple sources
@@ -46,6 +60,7 @@ DELETE /api/v1/users/:id      # Delete
 ```
 
 **Principles**:
+
 - Resource-based URLs (nouns, not verbs)
 - HTTP methods define actions
 - Plural names (`/users`)
@@ -55,6 +70,7 @@ DELETE /api/v1/users/:id      # Delete
 ### Response Format
 
 **Success**:
+
 ```json
 {
   "data": { ... },
@@ -63,6 +79,7 @@ DELETE /api/v1/users/:id      # Delete
 ```
 
 **Error**:
+
 ```json
 {
   "error": {
@@ -86,6 +103,7 @@ DELETE /api/v1/users/:id      # Delete
 **Use Proven Systems**: Supabase Auth, Auth0, AWS Cognito (never roll your own)
 
 **Session Management**:
+
 - httpOnly cookies (web) or JWTs (mobile/SPA)
 - Short-lived access tokens (15min-1hr) + refresh tokens
 - bcrypt/argon2 for password hashing
@@ -93,12 +111,14 @@ DELETE /api/v1/users/:id      # Delete
 ### Authorization (What can you do?)
 
 **Enforce in API Layer** (primary security):
+
 1. Extract and validate auth token
 2. Check user permissions for operation
 3. Perform operation if authorized
 4. Return 403 if denied
 
 **Patterns**:
+
 - **RBAC** (Role-Based): User roles → permissions
 - **ABAC** (Attribute-Based): Check user/resource attributes
 - **RLS** (Row Level Security): Database-level defense in depth
@@ -117,6 +137,7 @@ DELETE /api/v1/users/:id      # Delete
 ### Indexing
 
 **Add indexes for**:
+
 - WHERE clauses
 - JOIN columns
 - ORDER BY columns
@@ -127,6 +148,7 @@ DELETE /api/v1/users/:id      # Delete
 ### Type Generation
 
 Generate TypeScript/Python types from database schema:
+
 - Supabase: `supabase gen types typescript`
 - Benefits: Type safety, catch mismatches at compile time, self-documenting
 
@@ -157,6 +179,7 @@ Generate TypeScript/Python types from database schema:
 ## Error Handling
 
 **In Every Function**:
+
 - Top-level error handler
 - Log with context (request ID, user ID, timestamp)
 - Return user-friendly messages
@@ -182,19 +205,22 @@ Generate TypeScript/Python types from database schema:
 - E2E tests: API endpoints
 - Mock database for unit tests, use test DB for integration
 
-## LLM Integration (Anannas.ai)
+## LLM Integration
 
-**Why Use Gateway**:
+**Why Use a Gateway/Abstraction Layer**:
+
 - Switch providers (OpenAI, Anthropic, etc.) without code changes
 - Automatic fallback, cost tracking, rate limiting
+- Centralized configuration and monitoring
 
 **Best Practices**:
+
 - Keep API keys server-side only
-- Stream responses for UX
-- Handle timeouts (30-60s)
+- Stream responses for better UX
+- Handle timeouts appropriately (30-60s typical)
 - Rate limit per user
-- Cache common responses
-- Monitor costs
+- Cache common responses when appropriate
+- Monitor token usage and costs
 
 ## Performance
 
@@ -216,12 +242,14 @@ Generate TypeScript/Python types from database schema:
 ## Monitoring
 
 **Key Metrics**:
+
 - Request rate, response time (p50, p95, p99), error rate
 - Cold start frequency
 - LLM token usage/cost
 - Database query performance
 
 **Logging**:
+
 - JSON format, structured
 - Include request ID for tracing
 - Log levels: DEBUG, INFO, WARN, ERROR
@@ -230,12 +258,14 @@ Generate TypeScript/Python types from database schema:
 ## Anti-Patterns to Avoid
 
 ### Architecture
+
 - ❌ Frontend queries database directly
 - ❌ Business logic in frontend
 - ❌ No API versioning
 - ❌ Monolithic serverless functions
 
 ### Security
+
 - ❌ Rolling your own auth/crypto
 - ❌ Trusting client-side validation/authorization
 - ❌ No rate limiting
@@ -243,28 +273,32 @@ Generate TypeScript/Python types from database schema:
 - ❌ Exposing stack traces to users
 
 ### Database
+
 - ❌ No foreign keys or constraints
 - ❌ Manual schema changes
 - ❌ No indexes on query columns
 - ❌ N+1 queries
 
 ### API
+
 - ❌ Inconsistent response formats
 - ❌ No pagination
 - ❌ Wrong HTTP status codes
 - ❌ No input validation
 
-## Senior-Level Mindset
+## Related Skills
+
+- [engineering-standards](../engineering-standards/SKILL.md) - Foundational principles (simplicity, TDD, architecture)
+- [frontend-development](../frontend-development/SKILL.md) - Frontend that consumes this API layer
+
+## Backend-Specific Mindset
+
+In addition to the universal principles in [engineering-standards](../engineering-standards/SKILL.md#engineering-mindset):
 
 1. **Security is not optional** - Build secure from day one
-2. **API layer always** - Frontend never queries database
+2. **API layer always** - Frontend never queries database directly
 3. **Fail closed** - Deny unless explicitly allowed
-4. **Type safety end-to-end** - Database → API → Frontend
-5. **Migrations always** - Never manual schema changes
-6. **Monitor everything** - Can't fix what you can't measure
-7. **Simple beats clever** - Maintainable over impressive
-8. **Defense in depth** - Multiple security layers
-9. **Validate everything** - Never trust client input
-10. **Leverage platforms** - Don't build what you can buy
-11. **Optimize when measured** - Profile first
-12. **Design for failure** - Handle errors gracefully
+4. **Defense in depth** - Multiple security layers
+5. **Validate everything** - Never trust client input
+6. **Migrations always** - Never manual schema changes
+7. **Monitor everything** - Can't fix what you can't measure

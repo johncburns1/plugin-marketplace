@@ -1,7 +1,7 @@
 # Product Definition Guide Skill
 
 **Version**: 1.0.0
-**Last Updated**: 2025-12-23
+**Last Updated**: 2025-12-28
 
 ## Description
 
@@ -13,15 +13,15 @@ Conversational methodology for creating comprehensive product definition documen
 - Success metrics and scope boundaries
 - Technical considerations and open questions
 
-## When Claude Uses This Skill
+## When This Skill Activates
 
-Claude automatically activates this skill when:
+Activate this skill when the user:
 
-- User wants to create a product spec or PRD
-- Starting a new project and defining requirements
-- Creating a PRODUCT.md file
-- Organizing product thinking
-- Documenting product vision and strategy
+- Wants to create a product spec or PRD
+- Is starting a new project and defining requirements
+- Asks to create a PRODUCT.md file
+- Needs help organizing product thinking
+- Wants to document product vision and strategy
 
 ## Output
 

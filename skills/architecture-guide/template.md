@@ -1,6 +1,6 @@
 # ARCHITECTURE.md Template
 
-One-page architecture document template. Keep it concise—if it doesn't fit on one page, there may be too much detail=.
+One-page architecture document template. Keep it concise—if it doesn't fit on one page, there may be too much detail.
 
 ## Full Template
 

@@ -1,7 +1,7 @@
 # Python Engineering Skill
 
 **Version**: 1.0.0
-**Last Updated**: 2025-12-23
+**Last Updated**: 2025-12-28
 
 ## Description
 
@@ -13,15 +13,15 @@ Python-specific tooling and practices for Python 3.13+ projects using modern dev
 - **pytest**: Testing framework with coverage reporting
 - **pre-commit**: Automated checks before commits
 
-## When Claude Uses This Skill
+## When This Skill Activates
 
-Claude automatically activates this skill when:
+Activate this skill when the user:
 
-- Setting up Python projects
-- Working with Python code
-- Configuring Python tooling
-- Writing tests
-- Adding type annotations
+- Is setting up a Python project
+- Is working with Python code
+- Needs to configure Python tooling (uv, ruff, mypy, pytest)
+- Is writing tests
+- Is adding type annotations
 
 ## Full Documentation
 

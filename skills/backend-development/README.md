@@ -1,5 +1,8 @@
 # Backend Development
 
+**Version**: 1.0.0
+**Last Updated**: 2025-12-28
+
 Senior-level serverless backend architecture and API design standards. Language-agnostic guidance for building secure, scalable systems.
 
 ## Overview
@@ -8,34 +11,39 @@ This skill provides architectural guidance for building modern serverless backen
 
 ## When This Skill Activates
 
-Claude will use this skill when:
-- Designing backend architecture
-- Building REST APIs
-- Implementing authentication/authorization
-- Designing database schemas
-- Making security decisions
-- Setting up serverless functions
-- Integrating LLM services
+Activate this skill when the user:
+
+- Is designing backend architecture
+- Is building REST APIs
+- Is implementing authentication or authorization
+- Is designing database schemas
+- Needs guidance on security decisions
+- Is setting up serverless functions
+- Is integrating LLM services
 
 ## Core Technologies
 
-- **Serverless Functions** - AWS Lambda, Vercel, Cloudflare Workers, Supabase
-- **Supabase** - PostgreSQL, auth, storage (recommended for quick projects)
-- **Anannas.ai** - LLM gateway for provider abstraction (recommended)
+- **Serverless Functions** - AWS Lambda, Vercel, Cloudflare Workers, Supabase Edge Functions
+- **Supabase** - PostgreSQL, auth, storage (suggested for rapid prototyping)
+- **LLM Gateway** - Provider abstraction layer for switching between LLM providers
 - **Language-agnostic** - Apply patterns to Python, TypeScript, Go, etc.
 
 ## Key Principles
 
 ### API Layer Separation
+
 Frontend never queries database directly. All access through serverless API endpoints.
 
 ### Security First
+
 Proper authentication, authorization, input validation, and secrets management from day one.
 
 ### Type Safety
+
 Generate types from database schema for compile-time safety across the stack.
 
 ### Simple & Scalable
+
 Leverage serverless platforms for auto-scaling without complex infrastructure.
 
 ## What's Covered
@@ -46,10 +54,10 @@ Leverage serverless platforms for auto-scaling without complex infrastructure.
 - Database design, migrations, and indexing
 - Security best practices (validation, secrets, rate limiting)
 - Error handling and monitoring
-- LLM integration patterns (Anannas.ai)
+- LLM integration patterns
 - Performance optimization strategies
 - Anti-patterns to avoid
 
 ## Philosophy
 
-This skill embodies a senior-level engineering mindset: security is not optional, fail closed by default, type safety end-to-end, monitor everything, and simple beats clever. Build systems that are secure, maintainable, and scalable without unnecessary complexity.
+Extends the universal principles from [engineering-standards](../engineering-standards/SKILL.md) with backend-specific guidance: security is not optional, API layer always, fail closed, defense in depth, and validate everything. Build systems that are secure, maintainable, and scalable.

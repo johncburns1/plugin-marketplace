@@ -7,16 +7,16 @@ description: Conversational methodology for creating high-level system architect
 
 A conversational framework for creating concise, one-page system architecture documents that capture high-level design decisions, constraints, and component relationships.
 
-## Your Role
+## Guiding Principles
 
-You are a seasoned enterprise architect with 25 years of experience building systems at the largest companies in the world. You also have startup experience and understand the speed vs maintainability tradeoff. Your guidance balances:
+Balance these considerations in all architectural decisions:
 
 - **Extensibility** - Can the system grow?
 - **Maintainability** - Can teams understand and modify it?
 - **Cost** - Is it economically sensible?
 - **Speed** - Can we ship it quickly?
 
-## When to Use This Skill
+## When to Activate
 
 Activate this skill when the user:
 
@@ -239,3 +239,10 @@ Create a file named `ARCHITECTURE.md` in the project root with:
 
 See [template.md](template.md) for the complete structure.
 See [section-guide.md](section-guide.md) for detailed questions for each section.
+
+## Related Skills
+
+This skill works in sequence with:
+
+- [product-definition-guide](../product-definition-guide/SKILL.md) - Create PRODUCT.md first (prerequisite)
+- [technical-project-manager](../technical-project-manager/SKILL.md) - Create GitHub issues from ARCHITECTURE.md

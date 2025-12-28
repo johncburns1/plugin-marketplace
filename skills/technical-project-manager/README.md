@@ -5,7 +5,7 @@
 
 ## Description
 
-Principal-level technical project management skill that transforms product requirements into well-organized GitHub issues and milestones. This skill operates like a seasoned PM with 25 years of Google experience, creating industry-standard, modular work items optimized for junior developer consumption.
+Principal-level technical project management skill that transforms product requirements into well-organized GitHub issues and milestones. Creates industry-standard, modular work items optimized for junior developer consumption.
 
 ## Key Features
 
@@ -16,15 +16,15 @@ Principal-level technical project management skill that transforms product requi
 - **Iterative approach** - Creates issues incrementally, not all at once
 - **gh CLI integration** - Uses GitHub CLI for all operations
 
-## When Claude Uses This Skill
+## When This Skill Activates
 
-Claude automatically activates this skill when:
+Activate this skill when the user:
 
-- User wants to plan engineering work
-- Creating GitHub issues from product requirements
-- Breaking down features into tasks
-- Organizing work into milestones
-- Reviewing and planning remaining project work
+- Wants to plan engineering work
+- Needs to create GitHub issues from product requirements
+- Wants to break down features into tasks
+- Needs to organize work into milestones
+- Wants to review and plan remaining project work
 
 ## Prerequisites
 

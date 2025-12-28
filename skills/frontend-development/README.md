@@ -1,5 +1,8 @@
 # Frontend Development
 
+**Version**: 1.0.0
+**Last Updated**: 2025-12-28
+
 Senior-level React and Vite development standards for building responsive web applications.
 
 ## Overview
@@ -8,13 +11,14 @@ This skill provides architectural guidance for building modern web applications 
 
 ## When This Skill Activates
 
-Claude will use this skill when:
-- Building web applications with React
-- Making frontend architectural decisions
-- Designing component hierarchies
-- Implementing responsive/mobile-first design
-- Setting up new React projects
-- Reviewing frontend code
+Activate this skill when the user:
+
+- Is building web applications with React
+- Needs guidance on frontend architectural decisions
+- Is designing component hierarchies
+- Is implementing responsive or mobile-first design
+- Is setting up a new React project
+- Is reviewing frontend code
 
 ## Core Technologies
 
@@ -27,18 +31,23 @@ Claude will use this skill when:
 ## Key Principles
 
 ### Simplicity First
+
 Write simple, maintainable code. Avoid premature optimization and over-engineering.
 
 ### Mobile-First Responsive
+
 Design for mobile first, progressively enhance for larger screens.
 
 ### Type Safety
+
 TypeScript everywhere. Catch bugs at compile time, not runtime.
 
 ### Composition Over Complexity
+
 Build complex UIs from small, focused components.
 
 ### Test What Matters
+
 Test user behavior and critical paths, not implementation details.
 
 ## What's Covered
@@ -66,4 +75,4 @@ Test user behavior and critical paths, not implementation details.
 
 ## Philosophy
 
-This skill embodies a senior-level engineering mindset: write for the next developer, delete code aggressively, simple beats clever, and always prioritize accessibility and mobile experience from the start.
+Extends the universal principles from [engineering-standards](../engineering-standards/SKILL.md) with frontend-specific guidance: accessibility from the start, mobile-first always, progressive enhancement, and thoughtful error states. Simple beats clever.
