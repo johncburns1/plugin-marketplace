@@ -277,20 +277,20 @@ Brief description of what this project does.
 
 ## Installation
 
-\`\`\`bash
+```bash
 uv sync
-\`\`\`
+```
 
 ## Usage
 
-\`\`\`python
+```python
 from mypackage import main_function
 main_function()
-\`\`\`
+```
 
 ## Development
 
-\`\`\`bash
+```bash
 # Run tests
 uv run pytest
 
@@ -300,12 +300,11 @@ uv run mypy src
 # Lint and format
 uv run ruff check --fix
 uv run ruff format
-\`\`\`
+```
 
 ## License
 
 [Your License]
-```
 
 ## Quick Reference
 

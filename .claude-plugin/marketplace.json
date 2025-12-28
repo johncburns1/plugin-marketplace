@@ -16,13 +16,23 @@
   "plugins": [
     {
       "name": "engineering-skills",
-      "description": "Collection of software engineering skills including Python standards, testing practices, hexagonal architecture, and product definition methodology",
+      "description": "Collection of software engineering skills including Python standards, testing practices, and hexagonal architecture patterns",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/engineering-standards",
-        "./skills/python-engineering",
-        "./skills/product-definition-guide"
+        "./skills/python-engineering"
+      ]
+    },
+    {
+      "name": "project-planning",
+      "description": "Project planning and management skills for defining products, designing system architecture, creating GitHub issues, and organizing engineering work into milestones",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/product-definition-guide",
+        "./skills/architecture-guide",
+        "./skills/technical-project-manager"
       ]
     },
     {

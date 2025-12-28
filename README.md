@@ -10,13 +10,22 @@ Agent Skills are modular capabilities that extend Claude's functionality. Each S
 
 ### Engineering Skills
 
-A collection of software engineering agent skills for Python development, testing, architecture, and product definition.
+A collection of software engineering agent skills for Python development, testing, and architecture.
 
 **Skills included**:
 
 - **[Engineering Standards](./skills/engineering-standards/README.md)** - Core engineering principles including simplicity-first philosophy, TDD, and hexagonal architecture
 - **[Python Engineering](./skills/python-engineering/README.md)** - Python-specific tooling and practices for Python 3.13+ projects (uv, ruff, mypy, pytest)
+
+### Project Planning
+
+Project planning and management skills for defining products, designing system architecture, creating GitHub issues, and organizing engineering work.
+
+**Skills included**:
+
 - **[Product Definition Guide](./skills/product-definition-guide/README.md)** - Conversational methodology for creating comprehensive product specs and PRDs
+- **[Architecture Guide](./skills/architecture-guide/README.md)** - Enterprise architect perspective for creating one-page, technology-agnostic system architecture docs
+- **[Technical Project Manager](./skills/technical-project-manager/README.md)** - Principal-level PM skill for creating GitHub issues and milestones from product requirements
 
 ### Full-Stack Skills
 
@@ -37,6 +46,9 @@ Modern full-stack development skills for building responsive web applications wi
 
 # Install the engineering skills plugin
 /plugin install engineering-skills@jacks-agent-plugins
+
+# Install the project planning plugin
+/plugin install project-planning@jacks-agent-plugins
 
 # Install the full-stack skills plugin
 /plugin install full-stack-skills@jacks-agent-plugins
@@ -88,8 +100,9 @@ Once installed, Claude will automatically use these skills when relevant. No man
 
 ### Current Plugins
 
-1. **engineering-skills** - Software engineering agent skills (3 skills)
-2. **full-stack-skills** - Full-stack development skills (2 skills)
+1. **engineering-skills** - Software engineering agent skills (2 skills)
+2. **project-planning** - Project planning and management skills (3 skills)
+3. **full-stack-skills** - Full-stack development skills (2 skills)
 
 ## Resources
 
@@ -99,4 +112,4 @@ Once installed, Claude will automatically use these skills when relevant. No man
 
 ---
 
-**Last Updated**: 2025-12-23
+**Last Updated**: 2025-12-28

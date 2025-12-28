@@ -96,21 +96,25 @@ For detailed patterns, examples, and implementation guidance, see [hexagonal-arc
 Core principles to apply throughout development:
 
 **SRP (Single Responsibility Principle)**:
+
 - Each function, class, or module should have one reason to change
 - If you can describe what it does with "and", it's doing too much
 - Cohesive units are easier to test, understand, and modify
 
 **DRY (Don't Repeat Yourself)**:
+
 - Avoid duplicating logic across the codebase
 - Extract common patterns into reusable functions
 - Balance: Don't abstract too early - wait for the third repetition
 
 **KISS (Keep It Simple, Stupid)**:
+
 - Choose the simplest solution that solves the problem
 - Simple code is easier to debug, test, and maintain
 - Complexity should come from requirements, not implementation
 
 **YAGNI (You Aren't Gonna Need It)**:
+
 - Don't build features or abstractions for hypothetical future needs
 - Add functionality only when actually required
 - Over-engineering wastes time and adds maintenance burden
