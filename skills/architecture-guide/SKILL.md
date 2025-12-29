@@ -208,7 +208,7 @@ Capture the "why" behind choices:
 
 ### Step 11: Generate ARCHITECTURE.md
 
-Create the document using [template.md](template.md). Keep it to ONE PAGE when rendered. If it's longer, cut ruthlessly.
+Create the document using [template.md](template.md). Keep it to ONE PAGE when rendered. If it's longer, consider cutting but ensure that we capture the most critical details.
 
 ## Document Generation Principles
 
