@@ -94,7 +94,45 @@ This is critical. Ask about each category:
 - "Budget constraints that affect architecture choices?"
 - "Team size and expertise?"
 
-### Step 4: Capacity Estimation
+### Step 4: Gather Operational Requirements
+
+This is critical for production success. Ask about each operational concern:
+
+**Observability & Monitoring**:
+
+- "What metrics matter most? (latency, error rates, business metrics)"
+- "What would you need to see when debugging issues?"
+- "What alerts would wake you up at 3am?"
+- "Log retention needs? (days, weeks, compliance requirements)"
+
+**Error Handling & Resilience**:
+
+- "What happens when downstream services fail?"
+- "Which operations can degrade gracefully vs must fail fast?"
+- "What's acceptable for retries and timeouts?"
+- "Any circuit breaker or fallback patterns needed?"
+
+**Deployment & Releases**:
+
+- "How often do you want to deploy? (daily, weekly, on-demand)"
+- "Zero-downtime deployments required?"
+- "Need gradual rollouts or feature flags?"
+- "Rollback strategy?"
+
+**Disaster Recovery**:
+
+- "What's your backup strategy?"
+- "How quickly must you recover from total failure? (RTO)"
+- "How much data loss is acceptable? (RPO)"
+- "Multi-region failover needed?"
+
+**Cost Drivers**:
+
+- "What are the main cost drivers? (compute, storage, bandwidth, third-party APIs)"
+- "Any budget constraints that affect architecture?"
+- "Cost optimization priorities?"
+
+### Step 5: Capacity Estimation
 
 Do back-of-envelope math together:
 
@@ -106,7 +144,7 @@ Do back-of-envelope math together:
 
 Document assumptions. It's okay to be rough—order of magnitude matters.
 
-### Step 5: Map Core Entities
+### Step 6: Map Core Entities
 
 Identify the 3-7 core domain entities:
 
@@ -116,7 +154,7 @@ Identify the 3-7 core domain entities:
 
 Create a simple entity relationship outline (not a full data model).
 
-### Step 6: Identify Core Interfaces
+### Step 7: Identify Core Interfaces
 
 Map the key boundaries:
 
@@ -125,9 +163,15 @@ Map the key boundaries:
 - Third-party integrations
 - Data ingestion/egestion points
 
-Focus on contracts, not implementations.
+For APIs, also ask:
 
-### Step 7: High-Level Design
+- "REST, GraphQL, gRPC, or event-driven?"
+- "Versioning strategy?"
+- "Sync or async?"
+
+Focus on contracts and patterns, not implementations.
+
+### Step 8: High-Level Design
 
 Now synthesize into a high-level architecture:
 
@@ -138,7 +182,7 @@ Now synthesize into a high-level architecture:
 
 Create a simple ASCII or Mermaid diagram. Keep it to 5-10 boxes max.
 
-### Step 8: Deep Dive on Critical Components
+### Step 9: Deep Dive on Critical Components
 
 Identify 1-3 components that need more thought:
 
@@ -150,17 +194,19 @@ For each, discuss:
 
 - Key design decisions
 - Trade-offs considered
-- Patterns that apply (CQRS, event sourcing, saga, etc.)
+- Patterns that apply (CQRS, event sourcing, saga, circuit breaker, etc.)
+- Resilience strategy (retries, timeouts, fallbacks)
 
-### Step 9: Document Trade-offs & Decisions
+### Step 10: Document Trade-offs & Decisions
 
 Capture the "why" behind choices:
 
 - What alternatives were considered?
 - What trade-offs were made?
 - What would change at 10x scale?
+- What are the cost implications?
 
-### Step 10: Generate ARCHITECTURE.md
+### Step 11: Generate ARCHITECTURE.md
 
 Create the document using [template.md](template.md). Keep it to ONE PAGE when rendered. If it's longer, cut ruthlessly.
 
@@ -219,6 +265,7 @@ The document must fit on ONE PAGE and be readable in under 5 minutes:
 - Keep only architecture-driving decisions
 - Make diagrams glanceable (5-10 components max)
 - Detailed component discussions go in separate docs if needed
+- Keep operational considerations concise (table format, 1-2 lines per concern)
 
 ## Diagram Guidelines
 

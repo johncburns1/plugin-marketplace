@@ -159,7 +159,140 @@ Trade-off: Eventual delivery vs synchronous complexity
 | Architecture | Modular monolith | Microservices | Small team, fast iteration > independent scaling |
 | Database | Relational | Document store | Strong consistency, familiar to team |
 
-## 10. Future Considerations
+## 10. Operational Requirements
+
+### Observability & Monitoring
+
+**Questions**:
+
+- What metrics matter most? (latency, throughput, error rates, business KPIs)
+- What needs dashboards vs alerts?
+- What debug visibility is needed? (logs, traces, profiles)
+- Log retention requirements? (compliance, debugging)
+- Distributed tracing needed?
+
+**Example**:
+
+```text
+Monitoring:
+- API latency (p50, p95, p99) - alert if p95 > 500ms
+- Error rate by endpoint - alert if > 1%
+- Queue depth - alert if > 1000
+
+Logging:
+- Structured logs, 30-day retention
+- Request/response tracing for debugging
+- Correlation IDs across services
+```
+
+### Error Handling & Resilience
+
+**Questions**:
+
+- How should the system handle partial failures?
+- Which operations degrade gracefully vs fail fast?
+- Retry strategy? (exponential backoff, max attempts)
+- Timeout values for external calls?
+- Circuit breaker patterns needed?
+- Fallback behaviors?
+
+**Example**:
+
+```text
+Resilience Patterns:
+- External API calls: 3 retries with exponential backoff, 5s timeout
+- Circuit breaker on payment gateway (open after 5 failures)
+- Graceful degradation: Serve cached data if search is down
+- Fail fast: Reject requests if database unavailable
+```
+
+### Deployment & Release Strategy
+
+**Questions**:
+
+- Deployment frequency? (continuous, daily, weekly)
+- Zero-downtime required?
+- Deployment pattern? (blue/green, canary, rolling)
+- Feature flags needed?
+- Rollback strategy?
+- Database migration approach?
+
+**Example**:
+
+```text
+Deployment:
+- Rolling deployments with health checks
+- Canary releases for major changes (5% → 50% → 100%)
+- Feature flags for new features
+- Automated rollback on error rate spike
+- Database migrations run before deployment with backward compatibility
+```
+
+### Disaster Recovery & Backup
+
+**Questions**:
+
+- Backup frequency and retention?
+- Recovery time objective (RTO)?
+- Recovery point objective (RPO)?
+- Multi-region failover needed?
+- Disaster recovery testing frequency?
+
+**Example**:
+
+```text
+DR Strategy:
+- Database: Automated daily backups, 30-day retention
+- RTO: 4 hours (restore from backup)
+- RPO: 24 hours (daily backups acceptable)
+- Single region sufficient for MVP
+- Quarterly DR drills
+```
+
+### Cost Analysis
+
+**Questions**:
+
+- What are the main cost drivers?
+- Cost per user/request estimates?
+- Budget constraints affecting design?
+- Cost optimization priorities?
+- Cost monitoring approach?
+
+**Example**:
+
+```text
+Cost Drivers:
+- Primary: Compute (API servers) ~60%
+- Secondary: Database storage ~25%, Third-party APIs ~15%
+- Estimated: $0.50/user/month at 10K users = $5K/month
+- Optimization: Auto-scaling, reserved instances after growth validated
+```
+
+### API Design
+
+**Questions**:
+
+- API style? (REST, GraphQL, gRPC, event-driven)
+- Versioning strategy? (URL, header, content negotiation)
+- Sync vs async operations?
+- Pagination approach?
+- Rate limiting needed?
+- API documentation approach?
+
+**Example**:
+
+```text
+API Design:
+- REST API with JSON
+- Versioning via URL path (/v1/, /v2/)
+- Async for long-running operations (webhooks for completion)
+- Cursor-based pagination for large lists
+- Rate limiting: 1000 req/hour per API key
+- OpenAPI/Swagger documentation
+```
+
+## 11. Future Considerations
 
 **Questions**:
 

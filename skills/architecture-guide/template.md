@@ -75,6 +75,16 @@ Access Patterns:
 | [Name] | REST/gRPC/Event | [Brief description] |
 | [Name] | REST/gRPC/Event | [Brief description] |
 
+## Operational Considerations
+
+| Concern | Approach |
+|---------|----------|
+| Monitoring | [Key metrics: latency, errors, business metrics] |
+| Resilience | [Retry/timeout/circuit breaker strategy] |
+| Deployment | [Strategy: rolling/canary/blue-green] |
+| DR/Backup | [Backup frequency, RTO/RPO targets] |
+| Cost | [Primary drivers and optimization approach] |
+
 ## Deep Dive: [Critical Component]
 
 **Challenge**: [What makes this complex]
@@ -126,6 +136,14 @@ For simpler systems or early-stage projects:
 [Simple diagram]
 
 ```
+
+## Operations
+
+| Area | Approach |
+|------|----------|
+| Monitoring | [What to track] |
+| Resilience | [Error handling] |
+| Deployment | [How to deploy] |
 
 ## Decisions
 
@@ -231,3 +249,5 @@ Before finalizing, verify the document follows all principles in [SKILL.md](SKIL
 - [ ] Minimal entity definitions (no attributes)
 - [ ] Diagrams are simple and glanceable
 - [ ] Trade-offs documented for key decisions
+- [ ] Operational considerations included (monitoring, resilience, deployment)
+- [ ] Cost drivers identified
