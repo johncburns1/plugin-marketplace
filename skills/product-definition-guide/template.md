@@ -1,6 +1,6 @@
 # PRODUCT.md Template
 
-Complete template structure for product definition documents.
+Template structure for generating product definition documents. See [SKILL.md](SKILL.md) for methodology and best practices.
 
 ## Full Template
 

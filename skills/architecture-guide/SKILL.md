@@ -164,26 +164,45 @@ Capture the "why" behind choices:
 
 Create the document using [template.md](template.md). Keep it to ONE PAGE when rendered. If it's longer, cut ruthlessly.
 
-## Key Principles
+## Document Generation Principles
 
-### Stay High-Level
+When creating ARCHITECTURE.md, follow these principles:
 
-- No specific technologies (say "message queue" not "RabbitMQ")
-- No implementation details
-- Patterns over products
-- If it won't fit on a whiteboard, it's too detailed
+### 1. Stay High-Level and Pattern-Focused
 
-### Be Technology-Agnostic
+Use abstract patterns, not specific technologies:
 
-Good: "Async message queue for decoupling"
-Bad: "RabbitMQ cluster with 3 nodes"
+- ✓ "Message queue" / ✗ "RabbitMQ" or "AWS SQS"
+- ✓ "Object storage" / ✗ "S3" or "GCS"
+- ✓ "Relational database" / ✗ "PostgreSQL 15"
+- ✓ "Event-driven architecture" / ✗ "Kafka cluster configuration"
 
-Good: "Relational database for transactional data"
-Bad: "PostgreSQL 15 with pgvector extension"
+If you can't sketch it on a whiteboard in 5 minutes, it's too detailed.
 
-### Balance the Trade-offs
+### 2. No Implementation Details
 
-Every decision has trade-offs. Make them explicit:
+This is a requirements and architecture document, NOT an implementation guide:
+
+- NO code snippets, API schemas, or configurations
+- NO database schemas with column definitions
+- NO specific technology versions or configurations
+
+### 3. Minimal Entity Definitions
+
+For entities, document ONLY:
+
+- Entity name and purpose (one line)
+- Relationships (1:1, 1:N, N:N)
+- Access patterns (read-heavy, write-heavy, balanced)
+
+DO NOT document attributes, data types, validation rules, or status enums (these become outdated).
+
+✓ Good: `User: Authenticated actor, belongs to Organization`
+✗ Too detailed: `User: id (UUID), email (string), firstName (string), createdAt (timestamp), status (active/suspended)`
+
+### 4. Document Trade-offs
+
+Every architectural decision has trade-offs. Make them explicit:
 
 | Choice | Benefit | Cost |
 |--------|---------|------|
@@ -192,14 +211,14 @@ Every decision has trade-offs. Make them explicit:
 | Async processing | Better UX, fault tolerance | Eventual consistency |
 | Sync processing | Immediate consistency | Blocking, tight coupling |
 
-### One Page Rule
+### 5. One Page Maximum
 
-The final document must be digestible in 5 minutes. Ruthlessly cut:
+The document must fit on ONE PAGE and be readable in under 5 minutes:
 
-- Remove anything that's "nice to know"
-- Keep only architectural decisions
-- Deep dives go in separate docs if needed
-- Diagrams should be glanceable
+- Remove anything "nice to know"
+- Keep only architecture-driving decisions
+- Make diagrams glanceable (5-10 components max)
+- Detailed component discussions go in separate docs if needed
 
 ## Diagram Guidelines
 
@@ -230,15 +249,9 @@ Keep diagrams to 5-10 components. If you need more, you're too detailed.
 
 ## Output
 
-Create a file named `ARCHITECTURE.md` in the project root with:
+Create `ARCHITECTURE.md` in the project root following [template.md](template.md).
 
-- All sections from the template
-- At least one high-level diagram
-- Clear trade-off documentation
-- Technology-agnostic language
-
-See [template.md](template.md) for the complete structure.
-See [section-guide.md](section-guide.md) for detailed questions for each section.
+Use [section-guide.md](section-guide.md) for detailed questions to gather information for each section.
 
 ## Related Skills
 

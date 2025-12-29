@@ -1,50 +1,31 @@
 # Architecture Guide Skill
 
-**Version**: 1.0.0
-**Last Updated**: 2025-12-28
+A conversational skill for creating high-level, one-page system architecture documents focused on patterns, trade-offs, and architectural decisions.
 
-## Description
+## What It Does
 
-Conversational methodology for creating high-level, one-page system architecture documents (ARCHITECTURE.md files). This skill guides Claude through a structured process to extract and document:
+Guides you through creating an `ARCHITECTURE.md` file that documents:
 
-- Functional and non-functional requirements
-- Capacity estimations and scaling considerations
+- System requirements and capacity estimates
 - Core entities and their relationships
-- Key interfaces and boundaries
-- High-level system design with diagrams
-- Trade-offs and architectural decisions
+- High-level design with diagrams
+- Architectural patterns and trade-offs
 
-## When This Skill Activates
+## When to Use
 
-Activate this skill when the user:
+Use this skill when you want to:
 
-- Wants to create an architecture document
-- Is designing a new system's structure
-- Asks to create an ARCHITECTURE.md file
-- Needs help organizing technical design thinking
-- Wants to translate a PRODUCT.md into system design
-
-## Prerequisites
-
-Works best when a PRODUCT.md file exists (created via the product-definition-guide skill). Claude will read it first to understand product context before diving into architecture.
+- Create an ARCHITECTURE.md file for your project
+- Design system architecture for a new project
+- Document high-level technical decisions
+- Translate a PRODUCT.md into system architecture
 
 ## Output
 
-Generates a concise `ARCHITECTURE.md` file with:
+Generates a one-page, technology-agnostic architecture document that focuses on patterns and trade-offs rather than implementation details.
 
-- One-page constraint (digestible in 5 minutes)
-- Technology-agnostic patterns (no specific tech choices)
-- High-level diagrams (ASCII or Mermaid)
-- Clear trade-off documentation
-- Balanced consideration of extensibility, maintainability, cost, and speed
+Works best after creating a PRODUCT.md file (see product-definition-guide skill).
 
-## Key Principles
+## Documentation
 
-1. **Stay High-Level**: Patterns over products, whiteboard-friendly
-2. **Technology-Agnostic**: "Message queue" not "RabbitMQ"
-3. **Trade-off Aware**: Every decision has costs—make them explicit
-4. **One Page Rule**: If it doesn't fit, cut it
-
-## Full Documentation
-
-See [SKILL.md](./SKILL.md) for complete methodology, conversational framework, and examples.
+See [SKILL.md](./SKILL.md) for the complete methodology and workflow.

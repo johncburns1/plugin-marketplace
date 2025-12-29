@@ -2,6 +2,8 @@
 
 Comprehensive guide to test organization, naming, fixtures, mocking, and coverage strategies.
 
+Referenced from [SKILL.md](SKILL.md) for detailed implementation guidance.
+
 ## Test Organization
 
 ### Directory Structure

@@ -1,6 +1,8 @@
 # Section Guide - Detailed Questions and Examples
 
-Comprehensive guide for each section of the product definition document.
+Detailed questions for gathering information for each section of PRODUCT.md.
+
+For methodology and best practices, see [SKILL.md](SKILL.md).
 
 ## 1. Product Vision
 

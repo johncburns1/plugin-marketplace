@@ -2,6 +2,8 @@
 
 Comprehensive patterns and examples for implementing hexagonal architecture (Ports and Adapters) with Domain-Driven Design.
 
+Referenced from [SKILL.md](SKILL.md) for detailed implementation guidance.
+
 ## Architecture Layers
 
 ### Layer Responsibilities

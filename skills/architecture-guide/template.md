@@ -1,6 +1,6 @@
 # ARCHITECTURE.md Template
 
-One-page architecture document template. Keep it concise—if it doesn't fit on one page, there may be too much detail.
+Template structure for generating one-page architecture documents. See [SKILL.md](SKILL.md) for generation principles.
 
 ## Full Template
 
@@ -42,11 +42,17 @@ Storage: A GB, growing B% annually
 
 ## Core Entities
 
-```markdown
+```
 
+[Entity]: [Purpose/role in system]
+[Entity]: [Purpose/role in system]
+
+Relationships:
 [Entity] ──1:N──▶ [Entity]
 [Entity] ──N:1──▶ [Entity]
-[Entity] ──N:N──▶ [Entity]
+
+Access Patterns:
+[Entity]: Read-heavy / Write-heavy / Balanced
 
 ```
 
@@ -217,12 +223,11 @@ graph TB
 
 ## Checklist
 
-Before finalizing, verify:
+Before finalizing, verify the document follows all principles in [SKILL.md](SKILL.md):
 
-- [ ] Fits on one page when rendered
-- [ ] No specific technology names (patterns only)
-- [ ] At least one diagram
+- [ ] Fits on one page
+- [ ] Technology-agnostic (patterns only)
+- [ ] No code, schemas, or implementation details
+- [ ] Minimal entity definitions (no attributes)
+- [ ] Diagrams are simple and glanceable
 - [ ] Trade-offs documented for key decisions
-- [ ] Capacity estimates included
-- [ ] Non-functional requirements stated with targets
-- [ ] Future considerations noted

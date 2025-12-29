@@ -2,6 +2,8 @@
 
 Complete command reference and configurations for uv, ruff, mypy, and pytest.
 
+Referenced from [SKILL.md](SKILL.md) for detailed command usage.
+
 ## uv
 
 ### All Commands

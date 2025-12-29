@@ -1,6 +1,6 @@
 # Issue Template
 
-This is the standard template for all issues created by the Technical Project Manager skill.
+Standard template for creating GitHub issues. See [SKILL.md](SKILL.md) for methodology and workflow.
 
 ## Template
 
@@ -71,11 +71,13 @@ This is the standard template for all issues created by the Technical Project Ma
 - Avoid vague criteria like "works correctly" or "handles errors"
 
 **Good criteria:**
+
 - [ ] Password reset email is sent within 30 seconds of request
 - [ ] Reset link expires after 24 hours
 - [ ] User sees confirmation message after submitting email
 
 **Bad criteria:**
+
 - [ ] Password reset works
 - [ ] Emails are sent
 - [ ] User experience is good

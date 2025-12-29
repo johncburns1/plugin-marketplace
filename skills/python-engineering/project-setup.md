@@ -2,6 +2,8 @@
 
 Complete guide to project structure, configuration files, and setup procedures.
 
+Referenced from [SKILL.md](SKILL.md) for detailed setup guidance.
+
 ## Project Structure
 
 ### Standard Layout (src/ layout)

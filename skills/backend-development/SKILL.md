@@ -51,7 +51,7 @@ For rapid prototyping without special requirements. Evaluate alternatives based 
 
 ### RESTful Conventions
 
-```
+```text
 GET    /api/v1/users          # List
 GET    /api/v1/users/:id      # Get one
 POST   /api/v1/users          # Create
