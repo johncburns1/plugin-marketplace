@@ -17,24 +17,24 @@
     {
       "name": "project-planning",
       "description": "Project planning and management skills for defining products, designing system architecture, creating GitHub issues, and organizing engineering work into milestones",
-      "source": "./",
+      "source": "./plugins/project-planning",
       "strict": false,
       "skills": [
-        "./skills/product-definition-guide",
-        "./skills/architecture-guide",
-        "./skills/technical-project-manager"
+        "./plugins/project-planning/skills/product-definition-guide",
+        "./plugins/project-planning/skills/architecture-guide",
+        "./plugins/project-planning/skills/technical-project-manager"
       ]
     },
     {
       "name": "engineering-skills",
       "description": "Full-stack software engineering skills including core principles, Python standards, React frontend, and serverless backend development",
-      "source": "./",
+      "source": "./plugins/engineering",
       "strict": false,
       "skills": [
-        "./skills/engineering-standards",
-        "./skills/python-engineering",
-        "./skills/frontend-development",
-        "./skills/backend-development"
+        "./plugins/engineering/skills/engineering-standards",
+        "./plugins/engineering/skills/python-engineering",
+        "./plugins/engineering/skills/frontend-development",
+        "./plugins/engineering/skills/backend-development"
       ]
     }
   ]
