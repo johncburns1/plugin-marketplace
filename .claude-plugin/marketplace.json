@@ -20,9 +20,9 @@
       "source": "./plugins/project-planning",
       "strict": false,
       "skills": [
-        "./plugins/project-planning/skills/product-definition-guide",
-        "./plugins/project-planning/skills/architecture-guide",
-        "./plugins/project-planning/skills/technical-project-manager"
+        "./skills/product-definition-guide",
+        "./skills/architecture-guide",
+        "./skills/technical-project-manager"
       ]
     },
     {
