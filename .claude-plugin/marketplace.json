@@ -31,10 +31,10 @@
       "source": "./plugins/engineering",
       "strict": false,
       "skills": [
-        "./plugins/engineering/skills/engineering-standards",
-        "./plugins/engineering/skills/python-engineering",
-        "./plugins/engineering/skills/frontend-development",
-        "./plugins/engineering/skills/backend-development"
+        "./skills/engineering-standards",
+        "./skills/python-engineering",
+        "./skills/frontend-development",
+        "./skills/backend-development"
       ]
     }
   ]
