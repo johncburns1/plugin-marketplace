@@ -23,6 +23,20 @@ Follow these steps in order. Do not skip steps. Pause at each human touchpoint m
 
 ---
 
+> **Routing rule**: If the user provides an existing plan or feature description, always enter the pipeline at Step 1 (even if the plan appears complete) so it is reviewed and approved before implementation begins.
+
+---
+
+Before beginning Step 1, invoke the `engineering-standards` skill:
+
+```
+Use the engineering-standards skill.
+```
+
+This loads the foundational principles — simplicity-first, TDD, hexagonal architecture, SRP/DRY/KISS/YAGNI — that guide every decision in this pipeline.
+
+---
+
 ### Step 1 — Plan
 
 Produce a detailed implementation plan from `$ARGUMENTS` directly:
@@ -66,32 +80,25 @@ Present the amended plan to the user:
 
 ## Verdict: [APPROVED / NEEDS REVISION]
 
-Do you approve this plan? Once approved, I will create a GitHub issue and begin implementation.
+Do you approve this plan? Once approved, I will begin implementation.
 ```
 
 - If the user requests changes, apply them and return to step 2
-- If approved, create a GitHub issue:
-
-```bash
-gh issue create \
-  --title "[Feature]: [brief description]" \
-  --label "dev-workflow,implementing" \
-  --body "[full amended plan]"
-```
-
-Note the issue number — the implementation agent references it.
+- If approved, proceed to Step 4 with the approved plan in hand
 
 ---
 
 ### Step 4 — Implementation
 
-Invoke the `implementation-agent` with the GitHub issue number:
+Invoke the `implementation-agent` with the approved plan. Pass the full plan text directly in the invocation:
 
 ```
-Use the implementation-agent to implement GitHub issue #[N].
+Use the implementation-agent to implement this plan:
+
+[paste the full approved plan here]
 ```
 
-The agent runs the full TDD cycle in an isolated worktree: reads the issue, writes failing tests, implements to pass, iterates until all gates pass (tests, lint, coverage), then opens a PR. Wait for the PR URL before proceeding.
+The agent accepts the plan either inline (as above) or by reading a plan file if given a path. It runs the full TDD cycle in an isolated worktree: writes failing tests, implements to pass, iterates until all gates pass (tests, lint, coverage), then opens a PR. Wait for the PR URL before proceeding.
 
 ---
 

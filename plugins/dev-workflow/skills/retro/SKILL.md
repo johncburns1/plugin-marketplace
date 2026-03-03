@@ -20,6 +20,7 @@ Before analyzing, collect:
 - PR: commits, diff size, divergence from plan
 - Validation report: failure count and categories
 - Code review report: required vs. optional changes
+- Skill invocation trace: which skills and agents were invoked and in what order (captures skill routing errors — e.g., pipeline entered at wrong step, `engineering-standards` never loaded)
 
 ## Analysis Framework
 
@@ -59,6 +60,7 @@ Match each finding to a specific, named skill or agent in the marketplace:
 | TDD cycle needed many iterations | `implementation-agent` or `plan-review` skill (ambiguous contracts) |
 | Code review found quality issues | `code-review` skill or `engineering-standards` |
 | Retro was missing context | `retro` skill (artifacts to gather section) |
+| `engineering-standards` skill was never invoked | `dev-workflow` skill (add explicit invocation before Step 1) |
 
 Vague feedback ("the plan could be better") is not actionable. Specific feedback ("the plan-review skill should require explicit error type enumeration — three sessions have had ConflictError missing from plans") is.
 
