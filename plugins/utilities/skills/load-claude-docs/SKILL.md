@@ -2,7 +2,6 @@
 name: load-claude-docs
 description: This skill should be used when the user asks to "load Claude Code docs", "read the Claude Code documentation", "fetch Claude Code plugin docs", or needs up-to-date reference on the Claude Code plugins, subagents, or skills APIs before authoring.
 disable-model-invocation: true
-allowed-tools: WebFetch
 ---
 
 # Load Claude Code Docs
