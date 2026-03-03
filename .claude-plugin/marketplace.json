@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Marketplace for agent plugins including skills, commands, and tools for software engineering and product development",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
@@ -32,6 +32,12 @@
         "./agents/code-reviewer.md",
         "./agents/retro-agent.md"
       ]
+    },
+    {
+      "name": "utilities",
+      "description": "General-purpose utility skills including Claude Code documentation loading",
+      "source": "./plugins/utilities",
+      "strict": false
     }
   ]
 }

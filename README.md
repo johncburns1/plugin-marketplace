@@ -45,6 +45,14 @@ End-to-end development workflow orchestration. Runs a complete plan â†’ review â
 - **code-reviewer** - Reviews PR against original plan (fresh context)
 - **retro-agent** - Files retrospective issue in marketplace (autonomous)
 
+### Utilities
+
+General-purpose utility skills for Claude Code development.
+
+**Skills included**:
+
+- **[Load Claude Code Docs](./plugins/utilities/skills/load-claude-docs/README.md)** - Fetches the current Claude Code plugin, subagent, and skill docs in parallel and produces a structured API reference in context
+
 ## Installation
 
 ### Using Claude Code
@@ -96,7 +104,7 @@ Once installed, Claude will automatically use these skills when relevant. No man
 ## Marketplace Metadata
 
 - **Name**: `jacks-agent-plugins`
-- **Version**: `1.1.0`
+- **Version**: `1.2.0`
 - **Owner**: John C Burns
 - **License**: MIT
 
@@ -105,6 +113,7 @@ Once installed, Claude will automatically use these skills when relevant. No man
 1. **project-planning** - Project planning and management skills (3 skills)
 2. **engineering** - Software engineering skills (2 skills)
 3. **dev-workflow** - End-to-end development workflow (4 skills, 4 agents)
+4. **utilities** - General-purpose utility skills (1 skill)
 
 ## Resources
 
