@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Marketplace for agent plugins including skills, commands, and tools for software engineering and product development",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "repository": {
       "type": "git",
       "url": "https://github.com/johncburns1/plugin-marketplace"
@@ -27,14 +27,30 @@
     },
     {
       "name": "engineering",
-      "description": "Full-stack software engineering skills including core principles, Python standards, React frontend, and serverless backend development",
+      "description": "Software engineering skills including core principles and Python standards",
       "source": "./plugins/engineering",
       "strict": false,
       "skills": [
         "./skills/engineering-standards",
-        "./skills/python-engineering",
-        "./skills/frontend-development",
-        "./skills/backend-development"
+        "./skills/python-engineering"
+      ]
+    },
+    {
+      "name": "dev-workflow",
+      "description": "End-to-end development workflow with plan review, full TDD implementation, code review, and retrospective",
+      "source": "./plugins/dev-workflow",
+      "strict": false,
+      "skills": [
+        "./skills/dev-workflow",
+        "./skills/plan-review",
+        "./skills/code-review",
+        "./skills/retro"
+      ],
+      "agents": [
+        "./agents/plan-reviewer",
+        "./agents/implementation-agent",
+        "./agents/code-reviewer",
+        "./agents/retro-agent"
       ]
     }
   ]

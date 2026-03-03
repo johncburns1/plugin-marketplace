@@ -8,7 +8,7 @@ This is a marketplace for Claude Code agent plugins containing agent skills that
 
 ## Repository Structure
 
-```
+```text
 .claude-plugin/
   marketplace.json          # Marketplace metadata and plugin definitions
 
@@ -30,6 +30,7 @@ skills/
 Each skill directory must contain:
 
 1. **SKILL.md** with YAML frontmatter:
+
    ```markdown
    ---
    name: skill-name
@@ -69,6 +70,7 @@ Skills can reference other markdown files in their directory for detailed conten
 ## Installation
 
 Users install via Claude Code:
+
 ```bash
 /plugin marketplace add johncburns1/plugin-marketplace
 /plugin install engineering-skills@jacks-agent-plugins

@@ -14,20 +14,36 @@ Project planning and management skills for defining products, designing system a
 
 **Skills included**:
 
-- **[Product Definition Guide](./skills/product-definition-guide/README.md)** - Conversational methodology for creating comprehensive product specs and PRDs
-- **[Architecture Guide](./skills/architecture-guide/README.md)** - Enterprise architect perspective for creating one-page, technology-agnostic system architecture docs
-- **[Technical Project Manager](./skills/technical-project-manager/README.md)** - Principal-level PM skill for creating GitHub issues and milestones from product requirements
+- **[Product Definition Guide](./plugins/project-planning/skills/product-definition-guide/README.md)** - Conversational methodology for creating comprehensive product specs and PRDs
+- **[Architecture Guide](./plugins/project-planning/skills/architecture-guide/README.md)** - Enterprise architect perspective for creating one-page, technology-agnostic system architecture docs
+- **[Technical Project Manager](./plugins/project-planning/skills/technical-project-manager/README.md)** - Principal-level PM skill for creating GitHub issues and milestones from product requirements
 
 ### Engineering Skills
 
-Full-stack software engineering skills including core principles, Python standards, React frontend, and serverless backend development.
+Software engineering skills including core principles and Python standards.
 
 **Skills included**:
 
-- **[Engineering Standards](./skills/engineering-standards/README.md)** - Core engineering principles including simplicity-first philosophy, TDD, and hexagonal architecture
-- **[Python Engineering](./skills/python-engineering/README.md)** - Python-specific tooling and practices for Python 3.13+ projects (uv, ruff, mypy, pytest)
-- **[Frontend Development](./skills/frontend-development/README.md)** - React + Vite web development with TypeScript, responsive design, hooks + Context patterns
-- **[Backend Development](./skills/backend-development/README.md)** - Serverless architecture, API design, authentication/authorization, database design (language-agnostic)
+- **[Engineering Standards](./plugins/engineering/skills/engineering-standards/README.md)** - Core engineering principles including simplicity-first philosophy, TDD, and hexagonal architecture
+- **[Python Engineering](./plugins/engineering/skills/python-engineering/README.md)** - Python-specific tooling and practices for Python 3.13+ projects (uv, ruff, mypy, pytest)
+
+### Dev Workflow
+
+End-to-end development workflow orchestration. Runs a complete plan → review → implement → code-review → retro pipeline with two human touchpoints (plan approval and merge decision). All other steps are fully autonomous.
+
+**Skills included**:
+
+- **[Dev Workflow](./plugins/dev-workflow/skills/dev-workflow/README.md)** - Orchestration command (`/dev-workflow`) that runs the full pipeline
+- **[Plan Review](./plugins/dev-workflow/skills/plan-review/README.md)** - Criteria for evaluating plan completeness and interface contract precision
+- **[Code Review](./plugins/dev-workflow/skills/code-review/README.md)** - Final code review against the original plan
+- **[Retro](./plugins/dev-workflow/skills/retro/README.md)** - Session retrospective that files improvement issues in this marketplace
+
+**Agents included**:
+
+- **plan-reviewer** - Critical plan review (fresh context, engineering-standards)
+- **implementation-agent** - Full TDD cycle: writes failing tests, implements to pass, runs all gates, opens PR (isolated worktree)
+- **code-reviewer** - Reviews PR against original plan (fresh context)
+- **retro-agent** - Files retrospective issue in marketplace (autonomous)
 
 ## Installation
 
@@ -40,8 +56,8 @@ Full-stack software engineering skills including core principles, Python standar
 # Install the project planning plugin
 /plugin install project-planning@jacks-agent-plugins
 
-# Install the engineering skills plugin
-/plugin install engineering-skills@jacks-agent-plugins
+# Install the engineering plugin
+/plugin install engineering@jacks-agent-plugins
 
 # Or install from local directory
 claude --plugin-dir /path/to/plugin-marketplace
@@ -53,11 +69,8 @@ claude --plugin-dir /path/to/plugin-marketplace
 # Clone the repository
 git clone https://github.com/johncburns1/plugin-marketplace.git
 
-# Copy skills to your project
-cp -r plugin-marketplace/skills/* /path/to/your-project/.claude/skills/
-
-# Or copy to global skills directory
-cp -r plugin-marketplace/skills/* ~/.claude/skills/
+# Use as a local plugin directory
+claude --plugin-dir /path/to/plugin-marketplace
 ```
 
 ## Usage
@@ -68,30 +81,30 @@ Once installed, Claude will automatically use these skills when relevant. No man
 
 ### Adding a New Skill to Existing Plugin
 
-1. Create a new directory in `skills/` with a `SKILL.md` file
-2. Add a `README.md` with metadata and high-level description
-3. Add the skill path to the plugin's `skills` array in `marketplace.json`
-4. Update this README to list the new skill
-5. Increment the version in `.claude-plugin/marketplace.json`
+1. Create a new directory in `plugins/<plugin-name>/skills/` with `SKILL.md` and `README.md`
+2. Add the skill path to the plugin's `skills` array in `.claude-plugin/marketplace.json`
+3. Update this README to list the new skill
+4. Increment the version in `.claude-plugin/marketplace.json`
 
 ### Adding a New Plugin to Marketplace
 
-1. Create the plugin structure (commands, skills, agents, etc.)
-2. Add a new plugin entry to the `plugins` array in `marketplace.json`
+1. Create `plugins/<plugin-name>/` with the plugin structure (skills, agents, etc.)
+2. Add a new plugin entry to the `plugins` array in `.claude-plugin/marketplace.json`
 3. Update this README to describe the new plugin
 4. Increment the version in `.claude-plugin/marketplace.json`
 
 ## Marketplace Metadata
 
 - **Name**: `jacks-agent-plugins`
-- **Version**: `1.0.0`
+- **Version**: `1.1.0`
 - **Owner**: John C Burns
 - **License**: MIT
 
 ### Current Plugins
 
 1. **project-planning** - Project planning and management skills (3 skills)
-2. **engineering-skills** - Full-stack software engineering skills (4 skills)
+2. **engineering** - Software engineering skills (2 skills)
+3. **dev-workflow** - End-to-end development workflow (4 skills, 4 agents)
 
 ## Resources
 
@@ -101,4 +114,4 @@ Once installed, Claude will automatically use these skills when relevant. No man
 
 ---
 
-**Last Updated**: 2025-12-28
+**Last Updated**: 2026-03-03

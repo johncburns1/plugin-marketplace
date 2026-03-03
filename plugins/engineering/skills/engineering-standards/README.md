@@ -12,7 +12,7 @@ Core engineering principles and patterns for building maintainable, testable sof
 - **Hexagonal Architecture**: Domain-Driven Design patterns with ports and adapters
 - **Engineering Mindset**: Universal principles applied across all domains
 
-This skill is foundational—frontend-development, backend-development, and python-engineering extend these principles with domain-specific guidance.
+This skill is foundational—python-engineering extends these principles with domain-specific guidance.
 
 ## When This Skill Activates
 

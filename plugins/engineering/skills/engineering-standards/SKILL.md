@@ -28,11 +28,10 @@ These skills work together in a typical product/engineering workflow:
 │                  engineering-standards                          │
 │              (foundational principles)                          │
 │                       ↓                                         │
-│    ┌──────────────────┼──────────────────┐                      │
-│    ↓                  ↓                  ↓                      │
-│ frontend-       backend-           python-                      │
-│ development     development        engineering                  │
-│  (React)       (Serverless)        (Tooling)                    │
+│                       ↓                                         │
+│                   python-                                        │
+│                   engineering                                    │
+│                   (Tooling)                                      │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -200,14 +199,12 @@ Universal principles that apply across all domains (frontend, backend, infrastru
 9. **Leverage platforms** - Don't build what you can buy or use from proven tools
 10. **Build, measure, learn** - Ship fast, iterate based on real usage
 
-These principles are foundational. Domain-specific skills (frontend-development, backend-development) extend these with specialized guidance.
+These principles are foundational. Domain-specific skills extend these with specialized guidance.
 
 ## Related Skills
 
 This skill provides foundational principles used by:
 
-- [frontend-development](../frontend-development/SKILL.md) - React/Vite web development
-- [backend-development](../backend-development/SKILL.md) - Serverless API architecture
 - [python-engineering](../python-engineering/SKILL.md) - Python-specific tooling
 
 ## Further Reading
