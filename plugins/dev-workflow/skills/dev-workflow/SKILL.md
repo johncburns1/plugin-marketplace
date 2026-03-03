@@ -25,7 +25,7 @@ Follow these steps in order. Do not skip steps. Pause at each human touchpoint m
 
 ### Step 1 — Plan
 
-Use the `superpowers:writing-plans` skill to create a detailed implementation plan from `$ARGUMENTS`.
+Produce a detailed implementation plan from `$ARGUMENTS` directly:
 
 The plan must produce:
 - A one-sentence goal
