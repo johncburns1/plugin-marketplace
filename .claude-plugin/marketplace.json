@@ -6,51 +6,31 @@
   },
   "metadata": {
     "description": "Marketplace for agent plugins including skills, commands, and tools for software engineering and product development",
-    "version": "1.1.0",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/johncburns1/plugin-marketplace"
-    },
-    "license": "MIT"
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "project-planning",
       "description": "Project planning and management skills for defining products, designing system architecture, creating GitHub issues, and organizing engineering work into milestones",
       "source": "./plugins/project-planning",
-      "strict": false,
-      "skills": [
-        "./skills/product-definition-guide",
-        "./skills/architecture-guide",
-        "./skills/technical-project-manager"
-      ]
+      "strict": false
     },
     {
       "name": "engineering",
       "description": "Software engineering skills including core principles and Python standards",
       "source": "./plugins/engineering",
-      "strict": false,
-      "skills": [
-        "./skills/engineering-standards",
-        "./skills/python-engineering"
-      ]
+      "strict": false
     },
     {
       "name": "dev-workflow",
       "description": "End-to-end development workflow with plan review, full TDD implementation, code review, and retrospective",
       "source": "./plugins/dev-workflow",
       "strict": false,
-      "skills": [
-        "./skills/dev-workflow",
-        "./skills/plan-review",
-        "./skills/code-review",
-        "./skills/retro"
-      ],
       "agents": [
-        "./agents/plan-reviewer",
-        "./agents/implementation-agent",
-        "./agents/code-reviewer",
-        "./agents/retro-agent"
+        "./agents/plan-reviewer.md",
+        "./agents/implementation-agent.md",
+        "./agents/code-reviewer.md",
+        "./agents/retro-agent.md"
       ]
     }
   ]

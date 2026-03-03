@@ -54,6 +54,7 @@ gh pr create \
 ## When Done
 
 After the PR is open, summarize:
+
 - Which acceptance criteria are covered by tests
 - Which failure modes are covered by tests
 - Any deviations from the plan (flag every one with rationale)

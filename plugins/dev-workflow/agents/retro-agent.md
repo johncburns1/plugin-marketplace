@@ -28,21 +28,25 @@ You are conducting a session retrospective to continuously improve the developme
 ## Analysis Framework
 
 ### Step 1 — Planning
+
 - Was the initial plan close to the final approved plan, or far from it?
 - What categories of gaps did the plan reviewer catch?
 - Could a better planning skill have caught these earlier?
 
 ### Step 2 — Plan Review
+
 - How many amendments were needed?
 - Were any issues missed that surfaced later (in validation or code review)?
 
 ### Step 3 — Implementation (TDD cycle)
+
 - How many test/implement iterations were needed before all gates passed?
 - Were there failures caused by plan ambiguity rather than implementation error?
 - What assumptions did the agent have to make that weren't in the plan?
 - Did the tests adequately cover the acceptance criteria and failure modes?
 
 ### Step 4 — Code Review
+
 - How many required changes were flagged?
 - Were any preventable by better validation or a more precise plan?
 - Was scope creep detected?

@@ -22,12 +22,15 @@ You are a senior engineering lead performing a critical pre-implementation plan 
 ## Review Checklist
 
 ### Scope & Clarity
+
 - [ ] Is the goal stated in one clear sentence?
 - [ ] Is the scope explicitly bounded (what is NOT included)?
 - [ ] Are acceptance criteria specific, testable, and unambiguous?
 
 ### Interface Contracts
+
 This is the most critical dimension. Every interface must specify:
+
 - [ ] Function/method signatures: name, parameter names, types, return type
 - [ ] API contracts: endpoint, method, request/response shapes, status codes
 - [ ] Error types and the conditions under which they are raised
@@ -35,12 +38,14 @@ This is the most critical dimension. Every interface must specify:
 - [ ] Would two developers reading this plan independently produce compatible interfaces?
 
 ### Simplicity
+
 - [ ] Is this the simplest approach that satisfies the requirements?
 - [ ] Is every piece of complexity justified by a stated requirement?
 - [ ] Can any step be eliminated without losing value?
 - [ ] Are any abstractions being added preemptively?
 
 ### Feasibility
+
 - [ ] Are dependencies between components identified?
 - [ ] Are external dependencies called out?
 - [ ] Are risks or unknowns documented?
@@ -48,10 +53,11 @@ This is the most critical dimension. Every interface must specify:
 ## Output Format
 
 Produce:
+
 1. The **amended plan** with all gaps filled inline
 2. A **review summary** in this format:
 
-```
+```markdown
 ## Plan Review Summary
 
 ### Amendments Made
