@@ -27,6 +27,18 @@ Follow these steps in order. Do not skip steps. Pause at each human touchpoint m
 
 ---
 
+> **Skill vs. Agent Distinction**: Skills (`engineering-standards`, `plan-review`, `code-review`, `retro`) are reference documents loaded into context — they provide principles and frameworks. Agents (`plan-reviewer`, `implementation-agent`, `code-reviewer`, `retro-agent`) are autonomous sub-processes invoked with "Use the [name] agent." **Using a skill is NOT a substitute for invoking an agent.** If a pipeline step says "invoke the X agent", you must call the Agent tool — loading the X skill is not equivalent and does not complete that step.
+
+---
+
+> **Pipeline state**: Each pipeline step must emit `PIPELINE STEP: [N] of 7 — [step name]` as the first line of its output, so the orchestrator always knows the current position. Example: `PIPELINE STEP: 4 of 7 — Implementation`.
+
+---
+
+> **Routing correction**: If you are mid-session and uncertain which step comes next, re-read this SKILL.md before taking any action. Never assume a previous step was completed — verify it. Never skip a step because the user has provided a partial artifact.
+
+---
+
 Before beginning Step 1, invoke the `engineering-standards` skill:
 
 ```

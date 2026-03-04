@@ -52,6 +52,14 @@ createUser(userData: CreateUserInput): Promise<User>
     - ConflictError if email already exists
 ```
 
+#### Failure Mode Completeness Checklist
+
+Before approving any interface contract, verify:
+
+- [ ] Every status code or error type the interface can return is explicitly named in the plan
+- [ ] Each named error type has a corresponding acceptance criterion that maps to a test case
+- [ ] For changes that replace or remove an existing interface: at least one test verifies the old interface is no longer reachable (route deregistration, removed export, etc.)
+
 ### 3. Simplicity
 
 Evaluate every element of the plan against YAGNI and KISS:
