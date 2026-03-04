@@ -41,10 +41,10 @@ This check is mandatory. Skipping it causes duplicate PRs on wrong branches.
 4. **Iterate** — if tests still fail, fix the implementation (not the tests)
 5. **Run all gates** — tests, lint, type-check, coverage must all pass before opening a PR
 
-**Pre-push route registration audit** (required when implementation touches any router or `main.py`):
-1. Parse `main.py` for all `include_router` calls
-2. List all registered prefixes
-3. Verify: no duplicate prefixes, no router defined but unregistered, no router removed but still registered
+**Pre-push route registration audit** (required when implementation adds, removes, or renames any route or handler group):
+1. List all route/handler groups defined in the implementation
+2. List all route/handler groups registered in the application entry point
+3. Verify: no duplicate path prefixes, no handler defined but unregistered, no handler removed but still registered
 4. If any conflict is found, resolve it before pushing
 6. **Open a PR** (only if the pre-flight check in "Existing Branch and PR Targeting" did not identify an existing branch or PR):
 
