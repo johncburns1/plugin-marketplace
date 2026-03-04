@@ -37,6 +37,8 @@ Follow these steps in order. Do not skip steps. Pause at each human touchpoint m
 
 > **Routing correction**: If you are mid-session and uncertain which step comes next, re-read this SKILL.md before taking any action. Never assume a previous step was completed — verify it. Never skip a step because the user has provided a partial artifact.
 
+> **Pipeline recovery**: If resuming after an interruption, re-read this SKILL.md. Find the last `PIPELINE STEP: [N] of 7` header in the conversation to identify the last completed step. Continue from step N+1. Do not assume any step was completed if no `PIPELINE STEP` header is present for it.
+
 ---
 
 Before beginning Step 1, invoke the `engineering-standards` skill:
@@ -46,6 +48,8 @@ Use the engineering-standards skill.
 ```
 
 This loads the foundational principles — simplicity-first, TDD, hexagonal architecture, SRP/DRY/KISS/YAGNI — that guide every decision in this pipeline.
+
+After the skill loads, emit: `PIPELINE STEP: 0 of 7 — Engineering Standards Loaded`
 
 ---
 
@@ -102,12 +106,19 @@ Do you approve this plan? Once approved, I will begin implementation.
 
 ### Step 4 — Implementation
 
+> **AGENT INVOCATION REQUIRED**: Step 4 requires calling the `implementation-agent` via the Agent tool. There is no `executing-plans` skill. Loading a skill file is NOT equivalent to running an agent and does NOT complete this step. If you are unsure, re-read the Skill vs. Agent Distinction note above.
+
+- [ ] Confirm the `engineering-standards` skill is loaded (PIPELINE STEP 0 must appear in conversation history). If not, load it now before invoking the implementation-agent.
+
 Invoke the `implementation-agent` with the approved plan. Pass the full plan text directly in the invocation:
 
 ```
 Use the implementation-agent to implement this plan:
 
 [paste the full approved plan here]
+
+Existing branch (if any): [branch name from plan, or NONE]
+Existing PR (if any): #[PR number from plan, or NONE]
 ```
 
 The agent accepts the plan either inline (as above) or by reading a plan file if given a path. It runs the full TDD cycle in an isolated worktree: writes failing tests, implements to pass, iterates until all gates pass (tests, lint, coverage), then opens a PR. Wait for the PR URL before proceeding.
