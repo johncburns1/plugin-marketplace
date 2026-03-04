@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Marketplace for agent plugins including skills, commands, and tools for software engineering and product development",
-    "version": "1.5.0"
+    "version": "1.7.0"
   },
   "plugins": [
     {
@@ -27,10 +27,7 @@
       "source": "./plugins/dev-workflow",
       "strict": false,
       "agents": [
-        "./agents/plan-reviewer.md",
-        "./agents/implementation-agent.md",
-        "./agents/code-reviewer.md",
-        "./agents/retro-agent.md"
+        "./agents/implementation-agent.md"
       ]
     },
     {

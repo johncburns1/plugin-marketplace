@@ -81,6 +81,23 @@ Each criterion must be:
 > Given a valid email/password, `POST /auth/login` returns `200` with `{ token: string, expiresAt: ISO8601 }`
 > Given an invalid password, `POST /auth/login` returns `401` with `{ error: "InvalidCredentials" }`
 
+#### Route / Handler Impact Analysis (required for plans that add, remove, or rename routes or handlers)
+- [ ] List every route or handler group being added, removed, or renamed (by name and path prefix)
+- [ ] Confirm no path prefix conflicts with existing registrations
+- [ ] Confirm new routes/handlers are registered in the application's entry point (not just defined)
+
+#### File Move / Delete Enumeration (required for structural refactors)
+- [ ] List every file being moved: source path → destination path
+- [ ] List every file being deleted (not moved)
+- [ ] Confirm any module re-exports are updated so existing consumers are not broken
+- [ ] Confirm no dead file copies will remain after the refactor
+
+### 5. Refactor Safety (required for plans that move or reorganize files)
+- [ ] Source and destination paths are explicit (no ambiguous "move to X")
+- [ ] Module export updates at the destination are enumerated
+- [ ] Application entry-point registration changes are enumerated (added, removed, renamed handlers)
+- [ ] No dead file copies will remain (explicit deletion steps included)
+
 ## Output
 
 After review, produce:

@@ -34,11 +34,18 @@ This check is mandatory. Skipping it causes duplicate PRs on wrong branches.
    - One test per failure mode / error type
    - Tests must be runnable and must fail (red) before you write implementation
 3. **Implement to pass** — write the minimal production code to make the tests green:
+   - When moving or copying files that are siblings of files modified for security or correctness in this same session, apply those same fixes to the moved/copied files before committing. Do not assume the sibling was already correct.
    - Sketch module/file structure before writing code
    - Implement interface definitions (types, signatures) first
    - Fill in logic: happy path → error conditions → input validation → edge cases
 4. **Iterate** — if tests still fail, fix the implementation (not the tests)
 5. **Run all gates** — tests, lint, type-check, coverage must all pass before opening a PR
+
+**Pre-push route registration audit** (required when implementation adds, removes, or renames any route or handler group):
+1. List all route/handler groups defined in the implementation
+2. List all route/handler groups registered in the application entry point
+3. Verify: no duplicate path prefixes, no handler defined but unregistered, no handler removed but still registered
+4. If any conflict is found, resolve it before pushing
 6. **Open a PR** (only if the pre-flight check in "Existing Branch and PR Targeting" did not identify an existing branch or PR):
 
 ```bash

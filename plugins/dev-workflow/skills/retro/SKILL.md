@@ -20,7 +20,7 @@ Before analyzing, collect:
 - PR: commits, diff size, divergence from plan
 - Validation report: failure count and categories
 - Code review report: required vs. optional changes
-- Skill invocation trace: which skills and agents were invoked and in what order (captures skill routing errors — e.g., pipeline entered at wrong step, `engineering-standards` never loaded)
+- **Skill invocation trace**: Explicit list of which skills and agents were actually invoked vs. which the pipeline requires, with the delta surfaced as a finding. If the pipeline was bypassed (e.g., plan delivered via chat message), note it here.
 
 ## Source Repository Detection
 
@@ -36,6 +36,21 @@ gh repo view --json nameWithOwner -q '.nameWithOwner'
 Substitute the detected value directly into the `--repo` flag when constructing the source repo issue command. Do not rely on a shell variable being set in the environment.
 
 ## Analysis Framework
+
+**Skill Invocation Trace**
+
+Before evaluating individual steps, fill in this table from the conversation history:
+
+| Pipeline Step | Required Invocation | Actually Invoked | Delta |
+|---|---|---|---|
+| Step 0 | engineering-standards skill | [yes/no] | |
+| Step 1 | plan (inline) | [yes/no] | |
+| Step 2 | plan-reviewer agent | [yes/no] | |
+| Step 4 | implementation-agent | [yes/no] | |
+| Step 5 | code-reviewer agent | [yes/no] | |
+| Step 7 | retro-agent | [yes/no] | |
+
+If any Required Invocation was not actually invoked, surface it as a finding under Step 0 or the relevant step below.
 
 Evaluate each step for friction and success signals:
 
