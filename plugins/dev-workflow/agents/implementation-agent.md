@@ -59,3 +59,7 @@ After the PR is open, summarize:
 - Which failure modes are covered by tests
 - Any deviations from the plan (flag every one with rationale)
 - Gate results: test count, lint status, coverage %
+
+After delivering the summary, always end with this exact line:
+
+> NEXT STEP: Use the code-reviewer agent to review PR #[PR number] against the plan in GitHub issue #[issue number].

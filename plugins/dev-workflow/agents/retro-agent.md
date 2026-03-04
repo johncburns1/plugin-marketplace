@@ -21,3 +21,9 @@ You are conducting a session retrospective to continuously improve the developme
 7. If the source repository differs from `johncburns1/plugin-marketplace` and source-repo findings exist, create a second GitHub issue in the source repository using the Engineering Improvements format from the `retro` skill
 
 Match each finding to a specific skill or agent in the marketplace. Vague feedback ("plan could be better") is not actionable. Specific feedback ("plan-review skill should require explicit error type enumeration before approving") is.
+
+## When Done
+
+After all GitHub issues have been created, always end with this exact line:
+
+> PIPELINE COMPLETE: The dev-workflow session has concluded. All retro findings have been filed.
