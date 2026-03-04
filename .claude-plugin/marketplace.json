@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Marketplace for agent plugins including skills, commands, and tools for software engineering and product development",
-    "version": "1.5.0"
+    "version": "1.6.0"
   },
   "plugins": [
     {

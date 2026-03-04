@@ -25,6 +25,8 @@ Follow these steps in order. Do not skip steps. Pause at each human touchpoint m
 
 > **Routing rule**: If the user provides an existing plan or feature description, always enter the pipeline at Step 1 (even if the plan appears complete) so it is reviewed and approved before implementation begins.
 
+> **Valid entry points**: A plan delivered as a chat message is NOT a valid pipeline entry point. The pipeline always begins with a GitHub issue. If the user provides a plan as chat text rather than a GitHub issue URL or issue number, create a GitHub issue from the plan first, then proceed with Step 1 using that issue.
+
 ---
 
 > **Skill vs. Agent Distinction**: Skills (`engineering-standards`, `plan-review`, `code-review`, `retro`) are reference documents loaded into context — they provide principles and frameworks. Agents (`plan-reviewer`, `implementation-agent`, `code-reviewer`, `retro-agent`) are autonomous sub-processes invoked with "Use the [name] agent." **Using a skill is NOT a substitute for invoking an agent.** If a pipeline step says "invoke the X agent", you must call the Agent tool — loading the X skill is not equivalent and does not complete that step.

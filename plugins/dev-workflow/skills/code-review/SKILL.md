@@ -52,6 +52,8 @@ Verify the implementation matches the plan exactly:
 - Are secrets not hardcoded?
 - Are there SQL injection, XSS, or command injection risks?
 - Is authentication/authorization applied where required by the plan?
+- [ ] HTTP 401 responses include `WWW-Authenticate: Bearer` header consistently across all touched files (not just in files that were the primary focus of the PR)
+- [ ] All new routers have a registered prefix in `main.py`; no duplicate prefix registrations exist
 
 ## Verdict Criteria
 
