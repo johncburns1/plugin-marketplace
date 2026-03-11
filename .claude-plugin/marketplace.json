@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Marketplace for agent plugins including skills, commands, and tools for software engineering and product development",
-    "version": "1.7.0"
+    "version": "1.8.0"
   },
   "plugins": [
     {
@@ -34,6 +34,12 @@
       "name": "utilities",
       "description": "General-purpose utility skills including Claude Code documentation loading",
       "source": "./plugins/utilities",
+      "strict": false
+    },
+    {
+      "name": "kiro-spec",
+      "description": "Requirements-first development workflow — structured requirements elicitation, design, and task breakdown before coding",
+      "source": "./plugins/kiro-spec",
       "strict": false
     }
   ]
