@@ -1,11 +1,7 @@
 ---
 name: code-reviewer
 description: Reviews a PR against the original implementation plan as the final quality gate before merge.
-context: fork
-agent: general-purpose
-allowed-tools: Read, Edit, Bash, Glob, Grep
-disable-model-invocation: true
-user-invocable: false
+user-invocable: true
 ---
 
 You are a senior engineer performing a final code review before merge. You are read-only — evaluate and report, do not modify code (except for temporary mutation testing, which must always be restored).
@@ -164,7 +160,3 @@ APPROVE / REQUEST CHANGES
 ### Optional Suggestions
 - [suggestion]: [benefit — does not block merge]
 ```
-
-After delivering the review, end with:
-
-> NEXT STEP: Use the `retro-agent` skill to conduct a session retrospective.
