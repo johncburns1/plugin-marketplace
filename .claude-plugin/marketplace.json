@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Marketplace for agent plugins including skills, commands, and tools for software engineering and product development",
-    "version": "1.9.0"
+    "version": "2.0.0"
   },
   "plugins": [
     {
@@ -22,24 +22,15 @@
       "strict": false
     },
     {
-      "name": "dev-workflow",
-      "description": "End-to-end development workflow with plan review, full TDD implementation, code review, and retrospective",
-      "source": "./plugins/dev-workflow",
-      "strict": false,
-      "agents": [
-        "./agents/implementation-agent.md"
-      ]
-    },
-    {
       "name": "utilities",
       "description": "General-purpose utility skills including Claude Code documentation loading",
       "source": "./plugins/utilities",
       "strict": false
     },
     {
-      "name": "kiro-spec",
-      "description": "Requirements-first development workflow — structured requirements elicitation, design, and task breakdown before coding",
-      "source": "./plugins/kiro-spec",
+      "name": "jack-flow",
+      "description": "Jack's personal workflow skills — requirements-first spec writing and pre-merge quality gate pipeline",
+      "source": "./plugins/jack-flow",
       "strict": false
     }
   ]

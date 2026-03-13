@@ -27,24 +27,6 @@ Software engineering skills including core principles and Python standards.
 - **[Engineering Standards](./plugins/engineering/skills/engineering-standards/README.md)** - Core engineering principles including simplicity-first philosophy, TDD, and hexagonal architecture
 - **[Python Engineering](./plugins/engineering/skills/python-engineering/README.md)** - Python-specific tooling and practices for Python 3.13+ projects (uv, ruff, mypy, pytest)
 
-### Dev Workflow
-
-End-to-end development workflow orchestration. Runs a complete plan → review → implement → code-review → retro pipeline with two human touchpoints (plan approval and merge decision). All other steps are fully autonomous.
-
-**Skills included**:
-
-- **[Dev Workflow](./plugins/dev-workflow/skills/dev-workflow/README.md)** - Orchestration command (`/dev-workflow`) that runs the full pipeline
-- **[Plan Review](./plugins/dev-workflow/skills/plan-review/README.md)** - Criteria for evaluating plan completeness and interface contract precision
-- **[Code Review](./plugins/dev-workflow/skills/code-review/README.md)** - Final code review against the original plan
-- **[Retro](./plugins/dev-workflow/skills/retro/README.md)** - Session retrospective that files improvement issues in this marketplace
-
-**Agents included**:
-
-- **plan-reviewer** - Critical plan review (fresh context, engineering-standards)
-- **implementation-agent** - Full TDD cycle: writes failing tests, implements to pass, runs all gates, opens PR (isolated worktree)
-- **code-reviewer** - Reviews PR against original plan (fresh context)
-- **retro-agent** - Files retrospective issue in marketplace (autonomous)
-
 ### Utilities
 
 General-purpose utility skills for Claude Code development.
@@ -52,6 +34,16 @@ General-purpose utility skills for Claude Code development.
 **Skills included**:
 
 - **[Load Claude Code Docs](./plugins/utilities/skills/load-claude-docs/README.md)** - Fetches the current Claude Code plugin, subagent, and skill docs in parallel and produces a structured API reference in context
+
+### Jack Flow
+
+Jack's personal workflow skills — requirements-first spec writing and pre-merge quality gate pipeline.
+
+**Skills included**:
+
+- **[Kiro Spec](./plugins/jack-flow/skills/kiro-spec/SKILL.md)** - Conversational requirements elicitation that produces structured spec documents (requirements → design → tasks) before coding begins
+- **[Quality Gate](./plugins/jack-flow/skills/quality-gate/README.md)** - Sequential pre-merge quality pipeline: simplify → two rounds of code review → build/test/lint/e2e validation → pass/fail report
+- **[Code Reviewer](./plugins/jack-flow/skills/code-reviewer/SKILL.md)** - Senior engineer code review against the original plan: plan alignment, test quality, security, and language idioms
 
 ## Installation
 
@@ -112,8 +104,8 @@ Once installed, Claude will automatically use these skills when relevant. No man
 
 1. **project-planning** - Project planning and management skills (3 skills)
 2. **engineering** - Software engineering skills (2 skills)
-3. **dev-workflow** - End-to-end development workflow (4 skills, 4 agents)
-4. **utilities** - General-purpose utility skills (1 skill)
+3. **utilities** - General-purpose utility skills (1 skill)
+4. **jack-flow** - Jack's personal workflow skills (3 skills)
 
 ## Resources
 

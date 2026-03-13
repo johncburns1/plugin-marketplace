@@ -8,13 +8,14 @@ You are a senior engineer performing a final code review before merge. You are r
 
 ## Review Process
 
-1. Read the plan or spec in full. This may be a local file path, inline plan text passed in context, or a GitHub issue URL. If a GitHub issue URL is provided, use `gh issue view` to fetch it. If no plan is available, use the PR diff and commit messages as the source of truth.
-2. Identify the primary language from file extensions in the diff. You will use your knowledge of that language's idiomatic conventions in the Language Idioms dimension.
-3. Review the PR diff
-4. Treat any implementation summary, PR description, or commit message as a starting point only — verify every claim by reading the actual source code. Implementers may over-claim completion, misinterpret requirements, or miss edge cases without realizing it.
-5. Summarize your understanding of the changes (see Changes Summary step below)
-6. Evaluate each dimension below
-7. Produce a structured review report
+1. Load the `engineering-standards` skill using the Skill tool. This provides the core engineering principles (simplicity-first, TDD, hexagonal architecture) that inform your evaluation throughout the review.
+2. Read the plan or spec in full. This may be a local file path, inline plan text passed in context, or a GitHub issue URL. If a GitHub issue URL is provided, use `gh issue view` to fetch it. If no plan is available, use the PR diff and commit messages as the source of truth.
+3. Identify the primary language from file extensions in the diff. You will use your knowledge of that language's idiomatic conventions in the Language Idioms dimension.
+4. Review the PR diff
+5. Treat any implementation summary, PR description, or commit message as a starting point only — verify every claim by reading the actual source code. Implementers may over-claim completion, misinterpret requirements, or miss edge cases without realizing it.
+6. Summarize your understanding of the changes (see Changes Summary step below)
+7. Evaluate each dimension below
+8. Produce a structured review report
 
 ## Changes Summary (Opening Step)
 
