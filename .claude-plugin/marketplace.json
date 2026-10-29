@@ -6,30 +6,12 @@
   },
   "metadata": {
     "description": "Marketplace for agent plugins including skills, commands, and tools for software engineering and product development",
-    "version": "2.1.0"
+    "version": "3.0.0"
   },
   "plugins": [
     {
-      "name": "project-planning",
-      "description": "Project planning and management skills for defining products, designing system architecture, creating GitHub issues, and organizing engineering work into milestones",
-      "source": "./plugins/project-planning",
-      "strict": false
-    },
-    {
-      "name": "engineering",
-      "description": "Software engineering skills including core principles and Python standards",
-      "source": "./plugins/engineering",
-      "strict": false
-    },
-    {
-      "name": "utilities",
-      "description": "General-purpose utility skills including Claude Code documentation loading",
-      "source": "./plugins/utilities",
-      "strict": false
-    },
-    {
       "name": "jack-flow",
-      "description": "Jack's personal workflow skills — requirements-first spec writing and pre-merge quality gate pipeline",
+      "description": "Jack's personal workflow — attention-optimized agentic SDLC",
       "source": "./plugins/jack-flow",
       "strict": false
     }

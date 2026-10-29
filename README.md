@@ -8,42 +8,13 @@ Agent Skills are modular capabilities that extend Claude's functionality. Each S
 
 ## Available Plugins
 
-### Project Planning
-
-Project planning and management skills for defining products, designing system architecture, creating GitHub issues, and organizing engineering work.
-
-**Skills included**:
-
-- **[Product Definition Guide](./plugins/project-planning/skills/product-definition-guide/README.md)** - Conversational methodology for creating comprehensive product specs and PRDs
-- **[Architecture Guide](./plugins/project-planning/skills/architecture-guide/README.md)** - Enterprise architect perspective for creating one-page, technology-agnostic system architecture docs
-- **[Technical Project Manager](./plugins/project-planning/skills/technical-project-manager/README.md)** - Principal-level PM skill for creating GitHub issues and milestones from product requirements
-
-### Engineering Skills
-
-Software engineering skills including core principles and Python standards.
-
-**Skills included**:
-
-- **[Engineering Standards](./plugins/engineering/skills/engineering-standards/README.md)** - Core engineering principles including simplicity-first philosophy, TDD, and hexagonal architecture
-- **[Python Engineering](./plugins/engineering/skills/python-engineering/README.md)** - Python-specific tooling and practices for Python 3.13+ projects (uv, ruff, mypy, pytest)
-
-### Utilities
-
-General-purpose utility skills for Claude Code development.
-
-**Skills included**:
-
-- **[Load Claude Code Docs](./plugins/utilities/skills/load-claude-docs/README.md)** - Fetches the current Claude Code plugin, subagent, and skill docs in parallel and produces a structured API reference in context
-
 ### Jack Flow
 
-Jack's personal workflow skills — requirements-first spec writing and pre-merge quality gate pipeline.
+Jack's personal workflow — attention-optimized agentic SDLC.
 
 **Skills included**:
 
-- **[Kiro Spec](./plugins/jack-flow/skills/kiro-spec/SKILL.md)** - Conversational requirements elicitation that produces structured spec documents (requirements → design → tasks) before coding begins
-- **[Quality Gate](./plugins/jack-flow/skills/quality-gate/README.md)** - Sequential pre-merge quality pipeline: simplify → two rounds of code review → build/test/lint/e2e validation → pass/fail report
-- **[Code Reviewer](./plugins/jack-flow/skills/code-reviewer/SKILL.md)** - Senior engineer code review against the original plan: plan alignment, test quality, security, and language idioms
+- **[Agentic SDLC](./plugins/jack-flow/skills/agentic-sdlc/README.md)** - Attention-optimized delivery workflow: decompose work into small, independently deployable PRs, run many concurrent agent workstreams against main, and prioritize the human review queue
 
 ## Installation
 
@@ -53,11 +24,8 @@ Jack's personal workflow skills — requirements-first spec writing and pre-merg
 # Add the marketplace
 /plugin marketplace add johncburns1/plugin-marketplace
 
-# Install the project planning plugin
-/plugin install project-planning@jacks-agent-plugins
-
-# Install the engineering plugin
-/plugin install engineering@jacks-agent-plugins
+# Install the jack-flow plugin
+/plugin install jack-flow@jacks-agent-plugins
 
 # Or install from local directory
 claude --plugin-dir /path/to/plugin-marketplace
@@ -96,16 +64,13 @@ Once installed, Claude will automatically use these skills when relevant. No man
 ## Marketplace Metadata
 
 - **Name**: `jacks-agent-plugins`
-- **Version**: `1.2.0`
+- **Version**: `3.0.0`
 - **Owner**: John C Burns
 - **License**: MIT
 
 ### Current Plugins
 
-1. **project-planning** - Project planning and management skills (3 skills)
-2. **engineering** - Software engineering skills (2 skills)
-3. **utilities** - General-purpose utility skills (1 skill)
-4. **jack-flow** - Jack's personal workflow skills (3 skills)
+1. **jack-flow** - Jack's personal workflow (1 skill)
 
 ## Resources
 
@@ -115,4 +80,4 @@ Once installed, Claude will automatically use these skills when relevant. No man
 
 ---
 
-**Last Updated**: 2026-03-03
+**Last Updated**: 2026-10-29
