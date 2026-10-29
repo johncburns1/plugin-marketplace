@@ -1,0 +1,10 @@
+{
+  "name": "agentic-sdlc",
+  "description": "Attention-optimized agentic software delivery — small independently deployable PRs, concurrent agent workstreams, and a prioritized human review queue",
+  "author": {
+    "name": "John C Burns",
+    "email": "johncburns1@gmail.com"
+  },
+  "homepage": "https://github.com/johncburns1/plugin-marketplace",
+  "repository": "https://github.com/johncburns1/plugin-marketplace"
+}

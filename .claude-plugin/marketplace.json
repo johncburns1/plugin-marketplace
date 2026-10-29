@@ -12,11 +12,7 @@
     {
       "name": "agentic-sdlc",
       "description": "Attention-optimized agentic software delivery — small independently deployable PRs, concurrent agent workstreams, and a prioritized human review queue",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/agentic-sdlc"
-      ]
+      "source": "./"
     }
   ]
 }
