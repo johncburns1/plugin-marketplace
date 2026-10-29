@@ -73,7 +73,7 @@ Users install via Claude Code:
 
 ```bash
 /plugin marketplace add johncburns1/plugin-marketplace
-/plugin install engineering-skills@jacks-agent-plugins
+/plugin install jack-flow@jacks-agent-plugins
 
 # Or local testing
 claude --plugin-dir /path/to/plugin-marketplace
