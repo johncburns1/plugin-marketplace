@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "jack-flow",
-      "description": "Jack's personal workflow — attention-optimized agentic SDLC and a pre-merge code-reviewer agent",
+      "description": "Jack's personal workflow — attention-optimized agentic SDLC",
       "source": "./plugins/jack-flow",
       "strict": false
     }

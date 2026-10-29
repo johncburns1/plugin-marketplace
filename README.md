@@ -10,15 +10,11 @@ Agent Skills are modular capabilities that extend Claude's functionality. Each S
 
 ### Jack Flow
 
-Jack's personal workflow — attention-optimized agentic SDLC and a pre-merge code-reviewer agent.
+Jack's personal workflow — attention-optimized agentic SDLC.
 
 **Skills included**:
 
 - **[Agentic SDLC](./plugins/jack-flow/skills/agentic-sdlc/README.md)** - Attention-optimized delivery workflow: decompose work into small, independently deployable PRs, run many concurrent agent workstreams against main, and prioritize the human review queue
-
-**Agents included**:
-
-- **Code Reviewer** - Senior engineer code review as the final quality gate before merge
 
 ## Installation
 
@@ -74,7 +70,7 @@ Once installed, Claude will automatically use these skills when relevant. No man
 
 ### Current Plugins
 
-1. **jack-flow** - Jack's personal workflow (1 skill, 1 agent)
+1. **jack-flow** - Jack's personal workflow (1 skill)
 
 ## Resources
 
