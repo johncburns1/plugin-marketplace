@@ -11,6 +11,7 @@ This is a marketplace for Claude Code agent plugins containing agent skills that
 ```text
 .claude-plugin/
   marketplace.json          # Marketplace metadata and plugin definitions
+  plugin.json               # Plugin manifest for agentic-sdlc (the repo root is the plugin)
 
 skills/
   <skill-name>/
