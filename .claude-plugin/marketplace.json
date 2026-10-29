@@ -6,14 +6,17 @@
   },
   "metadata": {
     "description": "Marketplace for agent plugins including skills, commands, and tools for software engineering and product development",
-    "version": "3.0.0"
+    "version": "4.0.0"
   },
   "plugins": [
     {
-      "name": "jack-flow",
-      "description": "Jack's personal workflow — attention-optimized agentic SDLC",
-      "source": "./plugins/jack-flow",
-      "strict": false
+      "name": "agentic-sdlc",
+      "description": "Attention-optimized agentic software delivery — small independently deployable PRs, concurrent agent workstreams, and a prioritized human review queue",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/agentic-sdlc"
+      ]
     }
   ]
 }
